@@ -1,30 +1,17 @@
 from typing import List
 from PIL import Image
 from constants import *
+from misc import *
 
 class ImageGenerator:
-    def __init__(self, coded_content: str, bit_depth: int) -> None:
+    def __init__(self, coded_content: str, bit_depth: int, dimensions: tuple) -> None:
         self.coded_content = coded_content
         self.bit_depth = bit_depth
         self.total_pixels = len(self.coded_content)/self.bit_depth
-        self.width, self.height = self.fit_resolution()
+        self.dimensions = dimensions
+        self.width, self.height = self.dimensions
         self.pixel_array = self.get_pixel_array(self.generate_pixels())
         self.image = self.create_img()
-
-    def fit_resolution(self) -> tuple:
-        """
-        Find the nearest resolution to the total pixels.
-
-            Parameters
-                None
-
-            Returns
-                return A tuple with the width and height of the image
-        """
-
-        for key in RESOLUTIONS:
-            if key - self.total_pixels >= 0:
-                return RESOLUTIONS[key]
 
     def generate_pixels(self) -> List:
         """
@@ -39,10 +26,14 @@ class ImageGenerator:
 
         pixels = []
         for i in range(0, len(self.coded_content), self.bit_depth):
-            splitted_content, sub = self.coded_content[i:i+self.bit_depth], []
-            for j in range(0, len(splitted_content), 8):
-                if splitted_content[j:j+8]:
-                    sub.append(int(splitted_content[j:j+8], 2))
+            splitted_coded_content, sub = self.coded_content[i:i+self.bit_depth], []
+            # Divide by the number of channels
+            for j in range(0, len(splitted_coded_content), self.bit_depth//3):
+                if splitted_coded_content[j:j+self.bit_depth//3]:
+                    if len(splitted_coded_content[j:j+8]) < 8:
+                        sub.append(int(zero_pad_right(splitted_coded_content[j:j+8], self.bit_depth//3), 2))
+                    else:
+                        sub.append(int(splitted_coded_content[j:j+8], 2))
             if len(sub) < 3:
                 for i in range(3-len(sub)):
                     sub.append(0)

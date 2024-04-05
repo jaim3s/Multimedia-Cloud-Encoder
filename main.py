@@ -5,7 +5,7 @@ def main():
     Run code.
     """
 
-    program = Program("files/cano.txt", "huffman")
+    program = Program("files/mems.txt", "huffman")
     program.run()
     
 if __name__ == "__main__":

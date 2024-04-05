@@ -1,3 +1,5 @@
+from constants import *
+from misc import *
 import os
 
 class FileManager:
@@ -5,9 +7,15 @@ class FileManager:
         if self.check_file_path(file_path):
             raise Exception("File doesn't exist.")
         self.file_path = file_path
-        self.content = self.get_content()
         self.info = self.get_information()
-        self.symbols = self.info.keys()
+        self.symbols = list(self.info.keys())
+        self.end_delimiter = self.get_unique_symbol()
+        if not self.end_delimiter:
+            raise Exception("The delimiter is in the content of the file, this can produce ambiguity.")
+        # Add the new symbol
+        self.info[self.end_delimiter] = 1
+        self.symbols.append(self.end_delimiter)
+        self.content = self.get_content() + self.end_delimiter
         self.length = self.get_total_length()
 
     def check_file_path(self, file_path: str) -> bool:
@@ -85,4 +93,20 @@ class FileManager:
                 return A list with the probabilities of each symbol in terms of the length of the text file
         """
 
-        return [self.info[key]/self.length for key in self.info]
+        return [self.info[key]/self.length for key in self.symbols]
+
+    def get_unique_symbol(self) -> str:
+        """
+        Get a unique printable character.
+
+            Parameters
+                None
+
+            Returns
+                return Unique printable character the otherwise None.
+        """
+
+        for symbol in ASCII:
+            if symbol not in self.symbols:
+                return symbol
+        return None

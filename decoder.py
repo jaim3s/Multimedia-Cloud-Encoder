@@ -1,39 +1,36 @@
+from PIL import Image
+from constants import *
+from misc import *
+import os
+
 class Decoder:
-    def __init__(self, img_path: str, n: int, inverse_source_code: "SourceCode") -> None:
-        self.img_path = img_path
-        self.n = n
-        self.inverse_source_code = inverse_source_code
+    def __init__(self, folder_path: str) -> None:
+        self.folder_path = folder_path
 
-    def int_to_bin(self, num: int, n: int) -> str:
+    def get_coded_content_from_img(self, file_path: str) -> str:
         """
-        Convert integer to binary with n number of bits.
+        Get the coded content from the image.
 
             Parameters
-                num (int): Integer to convert
-                n (int): Number of bits
+                file_path (str): File path of the image
 
             Returns
-                return A string representing the binary number of the integer
-        """
-
-        return str(bin(num)[2:].zfill(n))
-
-    def get_coded_content(self) -> str:
-        """
-        Get the coded content from the img_path.
-
-            Parameters
-                None
-
-            Returns
-                return The coded content
+                return The coded content from the image
         """
 
         coded_content = ""
-        pixel_array = list(Image.open(self.img_path).getdata())[:self.n]
+        pixel_array = list(Image.open(file_path).getdata())
         for pixel in pixel_array:
             for val in pixel:
-                coded_content += self.int_to_bin(val, 8)
+                coded_content += int_to_bin_left_padding(val, BITS_PER_CHANNEL)
+        return coded_content
+
+    def get_coded_content(self) -> str:
+        coded_content = ""
+        for filename in os.listdir(self.folder_path):
+            file_path = os.path.join(self.folder_path, filename)
+            if os.path.isfile(file_path):
+                coded_content += self.get_coded_content_from_img(file_path)
         return coded_content
 
     def decode(self, coded_content: str) -> str:
@@ -41,16 +38,31 @@ class Decoder:
         Decode the coded content.
 
             Parameters
-                coded_content (str): The coded content of the text file
+                coded_content (str): The coded content from the image of the text file
 
             Returns
-                return The original coded content
+                return The original content
         """
 
+        inverse_source_code = {}
+        i = 0
+        value = coded_content[i:i+BLOCK_CODE_LENGTH]
+        # Get the inverse source code
+        while value != character_to_binary(SOURCE_CODE_DELIMITER, BLOCK_CODE_LENGTH):
+            length = int(coded_content[i+BLOCK_CODE_LENGTH:i+BLOCK_CODE_LENGTH*2], 2)
+            key = coded_content[i+BLOCK_CODE_LENGTH*2:i+BLOCK_CODE_LENGTH*2+length]
+            inverse_source_code[key] = binary_to_character(value)
+            i = i+BLOCK_CODE_LENGTH*2+length
+            value = coded_content[i:i+BLOCK_CODE_LENGTH]
+        # From here start the coded content of the text file
+        i = i+BLOCK_CODE_LENGTH
         content, sub = "", ""
-        for ch in coded_content:
-            sub += ch
-            if sub in self.inverse_source_code.map:
-                content += self.inverse_source_code.map[sub]
+        end_delimiter = list(inverse_source_code.keys())[-1]
+        for ch in range(i, len(coded_content)):
+            sub += coded_content[ch]
+            if sub == end_delimiter:
+                break
+            if sub in inverse_source_code:
+                content += inverse_source_code[sub]
                 sub = ""
         return content

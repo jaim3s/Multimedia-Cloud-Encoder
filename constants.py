@@ -1,12 +1,29 @@
 from huffman import Huffman
+import string
 
-# LIST OF CODING METHODS
+# ASCII printable characters 
+
+ASCII = string.printable
+
+# Universal delimiter
+
+SOURCE_CODE_DELIMITER = "~"
+
+# Lenght of the block code
+
+BLOCK_CODE_LENGTH = 8
+
+# Number of bits per channel (R, G, B)
+
+BITS_PER_CHANNEL = 8
+
+# List of coding methods
 
 CODING_METHODS = {
     "huffman": Huffman,
 }
 
-# YOUTUBE RESOLUTIONS
+# Youtube resolutions
 
 RESOLUTIONS = {
     426*240 : [426, 240],
@@ -16,11 +33,11 @@ RESOLUTIONS = {
     1920*1080 : [1920, 1080],
 }
 
-# BIT DEPTH
+# Bit depth
 
 BIT_DEPTH = 24
 
-# MODES FOR THE CREATION OF THE IMAGE
+# Modes for the creation of images (with PIL)
 
 MODES = {
     1 : "1",    # Black and white

@@ -1,4 +1,2 @@
-from PIL import Image
-
-a = Image.new("RGB", (200, 200))
-print(type(a))
+a = 2.34
+print(round(a))
