@@ -1,5 +1,14 @@
-from huffman import Huffman
-import string
+from scripts.encoders.huffman import Huffman
+import string, os
+
+# Get the current directory (from is executed the program, so is main.py folder)
+
+current_directory = os.getcwd()
+
+# Paths
+
+imgs_folder_path = current_directory + "\\imgs"
+logs_text_file_path = current_directory + "\\logs\\log.txt"
 
 # ASCII printable characters 
 

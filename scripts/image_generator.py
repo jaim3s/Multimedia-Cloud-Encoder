@@ -1,9 +1,45 @@
+from scripts.constants import *
+from scripts.misc import *
 from typing import List
 from PIL import Image
-from constants import *
-from misc import *
 
 class ImageGenerator:
+    """
+    A class to generate images.
+
+        Attributes
+        ----------
+
+        coded_content : str
+            Text file coded content
+        bit_depth : int
+            Bit depth (bpp) of the image
+        total_pixels : float
+            Total number of pixels to use in the image
+        dimensions : tuple 
+            Dimensions (width and height) of the image
+        width : int
+            Width of the image
+        height : int
+            Height of the image
+        pixel_array : List[List]
+            Matrix with pixels
+        image : "PIL.Image.Image"
+            PIL Image object
+
+        Methods
+        -------
+
+        generate_pixels(self) -> List:
+            Generate the image pixels from the content.
+        get_pixel_array(self, pixels: List) -> List[List]:
+            Generate the array of pixels from the pixel list.
+        create_img(self) -> "PIL.Image.Image":
+            Create the image from the pixel array.
+        save(self, file_path: str) -> None:
+            Save the image in the given path.
+    """
+
     def __init__(self, coded_content: str, bit_depth: int, dimensions: tuple) -> None:
         self.coded_content = coded_content
         self.bit_depth = bit_depth

@@ -1,9 +1,45 @@
+from scripts.image_generator import ImageGenerator
+from scripts.constants import *
 from typing import List
 from math import ceil
-from image_generator import ImageGenerator
-from constants import *
 
 class VideoGenerator:
+    """
+    A class to generate videos.
+
+        Attributes
+        ----------
+
+        coded_content : str
+            Text file coded content
+        bit_depth : int
+            Bit depth (bpp) of the image
+        total_pixels : float
+            Total number of pixels to use in the image
+        dimensions : tuple 
+            Dimensions (width and height) of the image
+        width : int
+            Width of the image
+        height : int
+            Height of the image
+        pixel_array : List[List]
+            Matrix with pixels
+        images : List
+            List with PIL Image objects
+
+        Methods
+        -------
+
+        fit_resolution(self) -> tuple:
+            Find the best resolution for the total pixels.
+        generate_images(self) -> List:
+            Generate the video images (frames).
+        save(self, folder_path: str) -> None:
+            Create the image from the pixel array.
+        save(self, file_path: str) -> None:
+            Save the video in the given path.
+    """
+
     def __init__(self, coded_content: str, bit_depth: int) -> None:
         self.coded_content = coded_content
         self.bit_depth = bit_depth

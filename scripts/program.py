@@ -1,30 +1,72 @@
-from file_manager import FileManager
-from source import Source
-from huffman import Huffman
-from encoder import Encoder
-from decoder import Decoder
-from video_generator import VideoGenerator
+from scripts.file_manager import FileManager
+from scripts.source import Source
+from scripts.encoders.huffman import Huffman
+from scripts.encoder import Encoder
+from scripts.decoder import Decoder
+from scripts.video_generator import VideoGenerator
+from scripts.constants import *
+from scripts.misc import *
 from math import ceil
-from constants import *
-from misc import *
 import os
 
 class Program:
-    def __init__(self, file_path: str, coding_method: str) -> None:
+    """
+    A class to execute the program.
+
+        Attributes
+        ----------
+
+        file_manager : FileManager
+            Text file manager
+        file_path : str
+            Path of the text file
+        coding_method : str
+            Name of the coding method to use
+        args : tuple
+            Extra arguments of the coding method
+
+        Methods
+        -------
+
+        log(self, content: str) -> None:
+            Create a file to write the given content.
+        delete_files_in_folder(self, folder_path: str) -> None:
+            Delete all the files of a given folder path.
+        run(self) -> None:
+            Run the program.
+    """
+
+    def __init__(self, file_path: str, coding_method: str, *args: tuple) -> None:
         self.file_manager = FileManager(file_path)
         self.file_path = file_path
         self.coding_method = coding_method
+        self.args = list(args)
 
     def log(self, content: str) -> None:
-        with open('logs/log.txt', 'w') as file:
+        """
+        Create a file to write the given content.
+
+            Parameters
+                content (str): Content to write in the log file
+    
+            Returns
+                return None
+        """
+
+        with open(logs_text_file_path, "w") as file:
             file.write(content)
 
-    def difference(self, file_path1: str, file_path2: str) -> None:
-        indx = []
-        with open(file_path1, 'r') as file1, open(file_path2, 'r') as file2:
-            content1, content2 = file1.read(), file2.read()
-
     def delete_files_in_folder(self, folder_path: str) -> None:
+        """
+        Delete all the files of a given folder path.
+
+            Parameters
+                folder_path (str): Path of the folder
+    
+            Returns
+                return None
+        """
+
         # Iterate over all the files in the folder
         for filename in os.listdir(folder_path):
             file_path = os.path.join(folder_path, filename)
@@ -36,9 +78,18 @@ class Program:
                 print(f"Failed to delete {file_path}: {e}")
 
     def run(self) -> None:
+        """
+        Run the program.
 
-        # Delete all the files of the folder /imgs
-        self.delete_files_in_folder("imgs/")
+            Parameters
+                None
+    
+            Returns
+                return None
+        """
+
+        # Delete all the files of the folder imgs_folder_path
+        self.delete_files_in_folder(imgs_folder_path)
 
         # Get the probability distribution and create the source
         pd = self.file_manager.get_pd()
@@ -87,4 +138,3 @@ class Program:
         # Print information 
         print("Number of pixels:", video.total_pixels)
         print("Image dimensions:", video.width, video.height)
-

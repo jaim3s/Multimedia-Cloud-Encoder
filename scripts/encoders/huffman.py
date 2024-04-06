@@ -1,5 +1,5 @@
-from source_code import SourceCode
-from huffman_node import HuffmanNode
+from scripts.source_code import SourceCode
+from scripts.encoders.huffman_node import HuffmanNode
 from typing import List
 
 class Huffman:

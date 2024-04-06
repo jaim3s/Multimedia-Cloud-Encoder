@@ -1,8 +1,44 @@
-from constants import *
-from misc import *
+from scripts.constants import *
+from scripts.misc import *
 import os
 
 class FileManager:
+    """
+    A class to manage the content of the text file.
+
+        Attributes
+        ----------
+
+        file_path : str
+            Path of the text file
+        info : dict
+            Dictionary with the unique symbols and the ocurrences
+        symbols : list
+            List of unique symbols from the text file
+        end_delimiter : str
+            End delimiter of the text file content
+        content : str
+            Content of the text file
+        length : int
+            Total number of characters in the content of the text file
+
+        Methods
+        -------
+
+        check_file_path(self, file_path: str) -> bool:
+            Check if the file exist.
+        get_content(self) -> str:
+            Get the content of the text file.
+        get_information(self) -> dict:
+            Get the unique symbols and number occurences from the file path.
+        get_total_length(self) -> int:
+            Get the total length of the text file.
+        get_pd(self) -> list:
+            Get the probability distribution of the text file.
+        get_unique_symbol(self) -> str:
+            Get a unique printable character.
+    """
+
     def __init__(self, file_path: str) -> None:
         if self.check_file_path(file_path):
             raise Exception("File doesn't exist.")
