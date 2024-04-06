@@ -76,7 +76,8 @@ class Decoder:
                 return Tuple with dictionary representing the inverse source code and last index of the content
         """
 
-        inverse_source_code, i, value = {}, 0, coded_content[i:i+BLOCK_CODE_LENGTH]
+        inverse_source_code, i = {}, 0
+        value = coded_content[i:i+BLOCK_CODE_LENGTH]
         # Get the inverse source code
         while value != character_to_binary(SOURCE_CODE_DELIMITER, BLOCK_CODE_LENGTH):
             length = int(coded_content[i+BLOCK_CODE_LENGTH:i+BLOCK_CODE_LENGTH*2], 2)
