@@ -1,4 +1,4 @@
-from scripts.constants import *
+import scripts.constants
 from scripts.misc import *
 import os
 
@@ -11,7 +11,7 @@ class FileManager:
 
         file_path : str
             Path of the text file
-        info : dict
+        occurrences : dict
             Dictionary with the unique symbols and the ocurrences
         symbols : list
             List of unique symbols from the text file
@@ -29,7 +29,7 @@ class FileManager:
             Check if the file exist.
         get_content(self) -> str:
             Get the content of the text file.
-        get_information(self) -> dict:
+        get_occurrences(self) -> dict:
             Get the unique symbols and number occurences from the file path.
         get_total_length(self) -> int:
             Get the total length of the text file.
@@ -41,15 +41,15 @@ class FileManager:
 
     def __init__(self, file_path: str) -> None:
         if self.check_file_path(file_path):
-            raise Exception("File doesn't exist.")
+            raise Exception(f"The file path ({file_path}) doesn't exist.")
         self.file_path = file_path
-        self.info = self.get_information()
-        self.symbols = list(self.info.keys())
+        self.occurrences = self.get_occurrences()
+        self.symbols = list(self.occurrences.keys())
         self.end_delimiter = self.get_unique_symbol()
         if not self.end_delimiter:
-            raise Exception("The delimiter is in the content of the file, this can produce ambiguity.")
+            raise Exception(f"The delimiter ({self.end_delimiter}) is in the content of the file, this can produce ambiguity.")
         # Add the new symbol
-        self.info[self.end_delimiter] = 1
+        self.occurrences[self.end_delimiter] = 1
         self.symbols.append(self.end_delimiter)
         self.content = self.get_content() + self.end_delimiter
         self.length = self.get_total_length()
@@ -83,7 +83,7 @@ class FileManager:
             content = file.read()
         return content
 
-    def get_information(self) -> dict:
+    def get_occurrences(self) -> dict:
         """
         Get the unique symbols and number occurences from the file path.
 
@@ -94,16 +94,16 @@ class FileManager:
                 return A dictionary with the unique symbols (keys) and the number of occurrences of each symbol (values)
         """
 
-        info = {}
+        occurrences = {}
         with open(self.file_path, 'r') as file:
             char = file.read(1)
             while char:
-                if char in info:
-                    info[char] += 1
+                if char in occurrences:
+                    occurrences[char] += 1
                 else:
-                    info[char] = 1
+                    occurrences[char] = 1
                 char = file.read(1)
-        return info
+        return occurrences
 
     def get_total_length(self) -> int:
         """
@@ -116,7 +116,7 @@ class FileManager:
                 return An integer with the total length of the text file
         """
 
-        return sum(self.info.values())
+        return sum(self.occurrences.values())
 
     def get_pd(self) -> list:
         """
@@ -129,20 +129,20 @@ class FileManager:
                 return A list with the probabilities of each symbol in terms of the length of the text file
         """
 
-        return [self.info[key]/self.length for key in self.symbols]
+        return [self.occurrences[key]/self.length for key in self.symbols]
 
     def get_unique_symbol(self) -> str:
         """
-        Get a unique printable character.
+        Get a unique printable symbol.
 
             Parameters
                 None
 
             Returns
-                return Unique printable character the otherwise None.
+                return A unique printable ASCII symbol, or None if all symbols are used.
         """
 
-        for symbol in ASCII:
+        for symbol in scripts.constants.ASCII_PRINTABLE_SYMBOLS:
             if symbol not in self.symbols:
                 return symbol
         return None

@@ -40,11 +40,12 @@ class VideoGenerator:
             Save the video in the given path.
     """
 
-    def __init__(self, coded_content: str, bit_depth: int) -> None:
+    def __init__(self, coded_content: str, bit_depth: int, platform: str) -> None:
         self.coded_content = coded_content
         self.bit_depth = bit_depth
+        self.platform = platform
         self.total_pixels = len(self.coded_content)/self.bit_depth
-        self.dimensions, self.remainder, self.frames = self.fit_resolution()
+        self.dimensions, self.frames = self.fit_resolution()
         self.width, self.height = self.dimensions
         self.images = self.generate_images()
 
@@ -59,14 +60,32 @@ class VideoGenerator:
                 return A tuple with the images dimensions, the remainder pixels and the number of frames
         """
 
-        dimensions, min_remainder, min_quotient = None, float("inf"), float("inf")
-        for key in RESOLUTIONS:
-            current_remainder = self.total_pixels%key
-            if min_remainder > current_remainder:
-                min_remainder = current_remainder
-                min_quotient = ceil(self.total_pixels/key)
-                dimensions = RESOLUTIONS[key]
-        return dimensions, min_remainder, min_quotient
+        min_resolution, max_resolution = RESOLUTIONS[self.platform]
+
+        # Get the dimensions of each resolution
+        min_w, min_h = min_resolution
+        max_w, max_h = max_resolution
+
+        if self.total_pixels <= min_w*min_h:
+            return min_resolution, 1
+        elif self.total_pixels >= max_w*max_h:
+            return max_resolution, ceil((max_w*max_h)/self.total_pixels)
+
+        if max_w - min_w >= max_h - min_h:
+            print(max_w-min_w)
+            dimensions = []
+            for w in range(min_w, max_w+1):
+                if min_h <= ceil(self.total_pixels/w) <= max_h:
+                    dimensions.append(((w, ceil(self.total_pixels/w)), self.total_pixels%w, ceil(self.total_pixels/w)))
+            best_resolution = min(dimensions, key=lambda dimension: dimension[1])
+            return best_resolution[0], best_resolution[2]
+        else:
+            dimensions = []
+            for h in range(min_h, max_h+1):
+                if min_w <= ceil(self.total_pixels/h) <= max_w:
+                    dimensions.append(((ceil(self.total_pixels/h), h), self.total_pixels%h, ceil(self.total_pixels/h)))
+            best_resolution = min(dimensions, key=lambda dimension: dimension[1])
+            return best_resolution[0], best_resolution[2]
 
     def generate_images(self) -> List:
         """

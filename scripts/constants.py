@@ -12,7 +12,7 @@ logs_text_file_path = current_directory + "\\logs\\log.txt"
 
 # ASCII printable characters 
 
-ASCII = string.printable
+ASCII_PRINTABLE_SYMBOLS = string.printable
 
 # Universal delimiter
 
@@ -32,14 +32,10 @@ CODING_METHODS = {
     "huffman": Huffman,
 }
 
-# Youtube resolutions
+# Minimal and maximal resolutions
 
 RESOLUTIONS = {
-    426*240 : [426, 240],
-    640*360 : [640, 360],
-    854*480 : [854, 480],
-    1280*720 : [1280, 720],
-    1920*1080 : [1920, 1080],
+    "youtube" : [(256, 144), (1920, 1080)],
 }
 
 # Bit depth

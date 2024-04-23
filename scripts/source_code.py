@@ -88,7 +88,7 @@ class SourceCode:
 
     def source_code_to_string(self, length: int) -> str:
         """
-        Convert the source code object into a string object with then next format:
+        Convert the source code object into a string object with the next format:
             value + length of the key (in bits) + key
 
             Parameters

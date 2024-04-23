@@ -13,8 +13,9 @@ def main():
     """
 
     program = Program(
-        "files/mems.txt", 
-        "huffman"
+        file_path="files/test.txt", 
+        coding_method="huffman",
+        args=[]
     )
     
     program.run()

@@ -1,12 +1,5 @@
-class A:
-    def __init__(self, *args):
-        self.args = args
+a = 2
+def func(a):
+    return a
 
-class B:
-    def __init__(self, *args):
-        print(type(args))
-        self.args = args
-
-a = A(1,2,3,4)
-b = B(*a.args)
-print(b.args)
+print(type(list))

@@ -7,6 +7,8 @@ from scripts.video_generator import VideoGenerator
 from scripts.constants import *
 from scripts.misc import *
 from math import ceil
+from typing import Tuple
+import numpy as np
 import os
 
 class Program:
@@ -15,11 +17,13 @@ class Program:
 
         Attributes
         ----------
-
-        file_manager : FileManager
-            Text file manager
+        
+        valid_kwargs : dict
+            Dictionary with the valid key word arguments
         file_path : str
             Path of the text file
+        file_manager : FileManager
+            Text file manager
         coding_method : str
             Name of the coding method to use
         args : tuple
@@ -28,6 +32,8 @@ class Program:
         Methods
         -------
 
+        validate_kwargs(self, kwargs: dict, valid_kwargs: dict) -> None:
+            Validate the key word arguments.
         log(self, content: str) -> None:
             Create a file to write the given content.
         delete_files_in_folder(self, folder_path: str) -> None:
@@ -36,11 +42,39 @@ class Program:
             Run the program.
     """
 
-    def __init__(self, file_path: str, coding_method: str, *args: tuple) -> None:
-        self.file_manager = FileManager(file_path)
-        self.file_path = file_path
-        self.coding_method = coding_method
-        self.args = list(args)
+    valid_kwargs = {
+        "file_path"       : str,
+        "coding_method"   : str,
+        "args"            : list,
+    }
+
+    def __init__(self, **kwargs) -> None:
+        # Validate the kwargs arguments
+        self.validate_kwargs(kwargs, self.valid_kwargs) 
+        self.file_manager = FileManager(self.file_path)
+        self.args = list(self.args)
+
+    def validate_kwargs(self, kwargs: dict, valid_kwargs: dict) -> None:
+        """
+        Validate the key word arguments.
+
+            Parameters
+                kwargs (dict): Dictinoary with the key word arguments
+                valid_kwargs (dict) : Dictionary with the allowed key word arguments
+    
+            Returns
+                return None
+        """
+
+        for key in kwargs:
+            # Validate key & value
+            if valid_kwargs.get(key, None):
+                if isinstance(kwargs[key], valid_kwargs[key]):
+                    setattr(self, key, kwargs[key])
+                else:
+                    raise Exception(f"The attributes values ({kwargs[key]}) are invalid.")
+            else:
+                raise Exception(f"The key ({key}) ins't a valid keyword argument.")
 
     def log(self, content: str) -> None:
         """
@@ -111,8 +145,13 @@ class Program:
         # Add the inverse source code to the coded content of the text file and the delimiters
         coded_content = inverse_source_code_str + character_to_binary(SOURCE_CODE_DELIMITER, BLOCK_CODE_LENGTH) + encoder.encode(content) 
 
-        # Video generator
-        video = VideoGenerator(coded_content, BIT_DEPTH)
+        # Video generator in the platform of youtube
+        video = VideoGenerator(
+            coded_content, 
+            BIT_DEPTH,
+            "youtube".lower()
+        )
+
         video.save("imgs/")
 
         # Decoder
@@ -122,10 +161,10 @@ class Program:
 
         decoder_content = decoder.decode(coded_content_decoder)
 
-        print(content[:-1] == decoder_content)
+        print("Content = Decoded content?:", content[:-1] == decoder_content)
 
         # Print basic information about the file
-        print("File path:", self.file_path)
+        print("File path:", self.file_manager.file_path)
         print("Coding method:", self.coding_method)
         print("Number of unique symbols:", len(self.file_manager.symbols))
         print("Number of characters:", self.file_manager.length)
