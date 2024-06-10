@@ -4,10 +4,10 @@ from scripts.encoders.huffman import Huffman
 from scripts.encoder import Encoder
 from scripts.decoder import Decoder
 from scripts.video_generator import VideoGenerator
-from scripts.constants import *
 from scripts.misc import *
 from math import ceil
 from typing import Tuple
+import scripts.constants
 import numpy as np
 import os
 
@@ -52,7 +52,6 @@ class Program:
         # Validate the kwargs arguments
         self.validate_kwargs(kwargs, self.valid_kwargs) 
         self.file_manager = FileManager(self.file_path)
-        self.args = list(self.args)
 
     def validate_kwargs(self, kwargs: dict, valid_kwargs: dict) -> None:
         """
@@ -87,7 +86,7 @@ class Program:
                 return None
         """
 
-        with open(logs_text_file_path, "w") as file:
+        with open(scripts.constants.logs_text_file_path, "w") as file:
             file.write(content)
 
     def delete_files_in_folder(self, folder_path: str) -> None:
@@ -122,44 +121,53 @@ class Program:
                 return None
         """
 
-        # Delete all the files of the folder imgs_folder_path
-        self.delete_files_in_folder(imgs_folder_path)
+        # Delete all the files of the folder frame_imgs_folder_path
+        self.delete_files_in_folder(scripts.constants.frame_imgs_folder_path)
 
         # Get the probability distribution and create the source
         pd = self.file_manager.get_pd()
-        content = self.file_manager.content
         source = Source(self.file_manager.symbols, pd)
+        
+        # Get the content
+        content = self.file_manager.content
 
-        T = ["0", "1"]
-        encoder = Encoder(self.coding_method, source, T)
+        # Create the encoder & get the source code 
+        encoder = Encoder(self.coding_method, source, self.args)
+        
+        print(encoder.source_code)
+        
         source_code = encoder.source_code
         inverse_source_code = source_code.inverse()
 
         # Get the inverse source code in string format
-        inverse_source_code_str = inverse_source_code.source_code_to_string(BLOCK_CODE_LENGTH)
+        inverse_source_code_str = inverse_source_code.inverse_source_code_to_string(scripts.constants.BLOCK_CODE_LENGTH)
         
         # Average word length and entropy of the source and source code
         average_length = source_code.average_length(source)
-        entropy = source.entropy(len(T))
+
+        # The base of the entropy is 2
+        entropy = source.entropy(scripts.constants.ENTROPY_ARITY)
 
         # Add the inverse source code to the coded content of the text file and the delimiters
-        coded_content = inverse_source_code_str + character_to_binary(SOURCE_CODE_DELIMITER, BLOCK_CODE_LENGTH) + encoder.encode(content) 
+        coded_content = inverse_source_code_str + character_to_binary(scripts.constants.SOURCE_CODE_DELIMITER, scripts.constants.BLOCK_CODE_LENGTH) + encoder.encode(content) 
 
         # Video generator in the platform of youtube
         video = VideoGenerator(
             coded_content, 
-            BIT_DEPTH,
+            scripts.constants.BIT_DEPTH,
             "youtube".lower()
         )
 
-        video.save("imgs/")
+        video.save(scripts.constants.frame_imgs_folder_path)
 
         # Decoder
-        decoder = Decoder("imgs/")
+        decoder = Decoder(scripts.constants.frame_imgs_folder_path)
 
         coded_content_decoder = decoder.get_coded_content()
 
         decoder_content = decoder.decode(coded_content_decoder)
+
+        self.log(decoder_content)
 
         print("Content = Decoded content?:", content[:-1] == decoder_content)
 

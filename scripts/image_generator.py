@@ -1,4 +1,4 @@
-from scripts.constants import *
+import scripts.constants
 from scripts.misc import *
 from typing import List
 from PIL import Image
@@ -106,7 +106,7 @@ class ImageGenerator:
                 return PIL.Image.Image create from the the pixel array
         """
 
-        image = Image.new(MODES[self.bit_depth], (self.width, self.height))
+        image = Image.new(scripts.constants.MODES[self.bit_depth], (self.width, self.height))
         for row in range(len(self.pixel_array)):
             for col in range(len(self.pixel_array[row])):
                 pixel_value = self.pixel_array[row][col]

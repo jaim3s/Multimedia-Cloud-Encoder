@@ -1,6 +1,7 @@
-import scripts.constants
 from scripts.misc import *
-import os
+from PIL import Image
+import scripts.constants
+import io, os
 
 class FileManager:
     """
@@ -43,6 +44,12 @@ class FileManager:
         if self.check_file_path(file_path):
             raise Exception(f"The file path ({file_path}) doesn't exist.")
         self.file_path = file_path
+        self.format = self.file_path[self.file_path.rfind(".")+1:]
+        # Get the content from the text file or image file
+        if self.format in scripts.constants.IMG_FORMATS:
+            self.content = self.convert_img_to_string()
+        elif self.format in scripts.constants.TXT_FORMATS:
+            self.content = self.get_content()
         self.occurrences = self.get_occurrences()
         self.symbols = list(self.occurrences.keys())
         self.end_delimiter = self.get_unique_symbol()
@@ -51,7 +58,7 @@ class FileManager:
         # Add the new symbol
         self.occurrences[self.end_delimiter] = 1
         self.symbols.append(self.end_delimiter)
-        self.content = self.get_content() + self.end_delimiter
+        self.content += self.end_delimiter
         self.length = self.get_total_length()
 
     def check_file_path(self, file_path: str) -> bool:
@@ -67,6 +74,24 @@ class FileManager:
 
         return not os.path.exists(file_path)
 
+    def convert_img_to_string(self) -> str:
+        """
+        Get the image in string format.
+
+            Parameters
+                None
+
+            Returns
+                return The image in the string format
+        """
+
+        byte_img_IO = io.BytesIO()
+        byte_img = Image.open(self.file_path)
+        byte_img.save(byte_img_IO, "PNG")
+        byte_img_IO.seek(0)
+        byte_img = byte_img_IO.read()
+        return str(byte_img)
+
     def get_content(self) -> str:
         """
         Get the content of the text file.
@@ -79,7 +104,7 @@ class FileManager:
         """
 
         content = ""
-        with open(self.file_path, 'r') as file:
+        with open(self.file_path, 'r', encoding="utf-8") as file:
             content = file.read()
         return content
 
@@ -95,7 +120,7 @@ class FileManager:
         """
 
         occurrences = {}
-        with open(self.file_path, 'r') as file:
+        with open(self.file_path, 'r', encoding="utf-8") as file:
             char = file.read(1)
             while char:
                 if char in occurrences:

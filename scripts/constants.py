@@ -1,4 +1,5 @@
 from scripts.encoders.huffman import Huffman
+from scripts.encoders.block import Block
 import string, os
 
 # Get the current directory (from is executed the program, so is main.py folder)
@@ -8,15 +9,25 @@ current_directory = os.getcwd()
 # Paths
 
 imgs_folder_path = current_directory + "\\imgs"
+frame_imgs_folder_path = current_directory + "\\frame_imgs"
 logs_text_file_path = current_directory + "\\logs\\log.txt"
+
+# Formats
+
+IMG_FORMATS = ["png", "jpg"]
+TXT_FORMATS = ["txt"]
 
 # ASCII printable characters 
 
 ASCII_PRINTABLE_SYMBOLS = string.printable
 
+# Entropy arity
+
+ENTROPY_ARITY = 2
+
 # Universal delimiter
 
-SOURCE_CODE_DELIMITER = "~"
+SOURCE_CODE_DELIMITER = "¿"
 
 # Lenght of the block code
 
@@ -29,7 +40,8 @@ BITS_PER_CHANNEL = 8
 # List of coding methods
 
 CODING_METHODS = {
-    "huffman": Huffman,
+    "huffman" : Huffman,
+    "block"   : Block,
 }
 
 # Minimal and maximal resolutions

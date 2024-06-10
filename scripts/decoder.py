@@ -1,4 +1,4 @@
-from scripts.constants import *
+import scripts.constants
 from scripts.misc import *
 from PIL import Image
 import os
@@ -44,7 +44,7 @@ class Decoder:
         pixel_array = list(Image.open(file_path).getdata())
         for pixel in pixel_array:
             for val in pixel:
-                coded_content += int_to_bin_left_padding(val, BITS_PER_CHANNEL)
+                coded_content += int_to_bin_left_padding(val, scripts.constants.BITS_PER_CHANNEL)
         return coded_content
 
     def get_coded_content(self) -> str:
@@ -77,15 +77,15 @@ class Decoder:
         """
 
         inverse_source_code, i = {}, 0
-        value = coded_content[i:i+BLOCK_CODE_LENGTH]
+        value = coded_content[i:i+scripts.constants.BLOCK_CODE_LENGTH]
         # Get the inverse source code
-        while value != character_to_binary(SOURCE_CODE_DELIMITER, BLOCK_CODE_LENGTH):
-            length = int(coded_content[i+BLOCK_CODE_LENGTH:i+BLOCK_CODE_LENGTH*2], 2)
-            key = coded_content[i+BLOCK_CODE_LENGTH*2:i+BLOCK_CODE_LENGTH*2+length]
+        while value != character_to_binary(scripts.constants.SOURCE_CODE_DELIMITER, scripts.constants.BLOCK_CODE_LENGTH):
+            length = int(coded_content[i+scripts.constants.BLOCK_CODE_LENGTH:i+scripts.constants.BLOCK_CODE_LENGTH*2], 2)
+            key = coded_content[i+scripts.constants.BLOCK_CODE_LENGTH*2:i+scripts.constants.BLOCK_CODE_LENGTH*2+length]
             inverse_source_code[key] = binary_to_character(value)
-            i = i+BLOCK_CODE_LENGTH*2+length
-            value = coded_content[i:i+BLOCK_CODE_LENGTH]
-        return inverse_source_code, i+BLOCK_CODE_LENGTH
+            i = i+scripts.constants.BLOCK_CODE_LENGTH*2+length
+            value = coded_content[i:i+scripts.constants.BLOCK_CODE_LENGTH]
+        return inverse_source_code, i+scripts.constants.BLOCK_CODE_LENGTH
 
     def decode(self, coded_content: str) -> str:
         """

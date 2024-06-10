@@ -1,9 +1,9 @@
-from scripts.constants import *
+import scripts.constants
 from scripts.encoders.huffman import Huffman
 
 class Encoder:
     """
-    A class to encode the content of the text file.
+    A class to encode the content of the text file with a given coding method.
 
         Attributes
         ----------
@@ -11,13 +11,13 @@ class Encoder:
         coding_method : str
             Name of the coding method to use
         source : "Source" 
-            Source of the text file (Symbols, Probability distribution)
+            Source of the text file (Symbols, Probability Distribution)
         args : tuple
             Extra arguments of the coding method
         encoder : Object 
-            Get the encoder to encode the file content
+            Conding method to encode the file content
         source_code : "SourceCode"
-            Get the source code from the encoder
+            Source code from the encoder
 
         Methods
         -------
@@ -28,12 +28,11 @@ class Encoder:
             Encode the content.
     """
 
-    def __init__(self, coding_method: str, source: "Source", *args: tuple) -> None:
+    def __init__(self, coding_method: str, source: "Source", args: list) -> None:
         self.coding_method = coding_method.lower()
         self.source = source
-        self.args = list(args)
+        self.args = args
         self.encoder = self.select_coding_method()
-        # All the coding methods need the function of get source code
         self.source_code = self.encoder.get_source_code()
 
     def select_coding_method(self) -> object:
@@ -47,9 +46,11 @@ class Encoder:
                 return The coding method object or raise an Exception
         """
 
-        if self.coding_method in CODING_METHODS:
-            return CODING_METHODS[self.coding_method](self.source, *self.args)
-        raise Exception("Coding method doesn't exist.")
+        if self.coding_method in scripts.constants.CODING_METHODS:
+            if scripts.constants.CODING_METHODS.get(self.coding_method, None):
+                return scripts.constants.CODING_METHODS[self.coding_method](self.source, *self.args)
+            else:
+                raise Exception(f"Coding method ({self.coding_method}) doesn't exist.")
 
     def encode(self, content: str) -> str:
         """

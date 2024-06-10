@@ -86,20 +86,19 @@ class SourceCode:
 
         return sum([source.pd[i]*len(self.symbols2[i]) for i in range(len(source.symbols))])
 
-    def source_code_to_string(self, length: int) -> str:
+    def inverse_source_code_to_string(self, length: int) -> str:
         """
         Convert the source code object into a string object with the next format:
             value + length of the key (in bits) + key
 
             Parameters
-                length (int): length to fit the binary string
+                length (int): Length to fit the binary string
     
             Returns
                 return String source code format
         """
 
         sc_to_string = ""
-        # Assert self.map[key] is a character
         for key in self.map:
             sc_to_string += character_to_binary(self.map[key], length) + int_to_bin_left_padding(len(key), length) + key
         return sc_to_string

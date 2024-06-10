@@ -1,99 +1,487 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae varius elit. Aliquam id eleifend magna, in dictum sem. Duis quis ex sit amet dolor tempor lobortis ac eu enim. Integer malesuada maximus mauris, a hendrerit risus bibendum vitae. Fusce tempor diam in maximus varius. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut ornare vehicula sollicitudin. Suspendisse quis ante lobortis, finibus augue eu, tempor lacus. Fusce nunc dolor, tincidunt sed eros consequat, consequat consectetur odio. Donec efficitur massa a magna posuere, nec hendrerit odio dapibus. Aenean dolor lacus, porttitor vitae pulvinar ut, maximus cursus nisi. Vivamus gravida sollicitudin orci in rutrum. Suspendisse dignissim in ipsum non dapibus. Morbi ut tortor id est iaculis pellentesque non eget urna. Nulla facilisi. Praesent nec convallis sem.
 
-Nulla sodales enim lorem. Sed volutpat euismod efficitur. Aenean efficitur elit sit amet magna tincidunt tempor. Curabitur quis lobortis mi. Suspendisse ultricies lacinia diam ac aliquam. Curabitur suscipit sit amet magna in vestibulum. Donec et enim vitae magna tempus rhoncus. Suspendisse tincidunt velit id imperdiet volutpat. Cras nunc nisl, commodo in arcu ut, pharetra egestas dolor. Praesent ullamcorper eu nulla quis suscipit. Aliquam ipsum enim, porta non massa at, porttitor efficitur nisi. Nunc malesuada mollis maximus.
 
-Curabitur nec neque et odio venenatis porttitor. Integer quam quam, condimentum quis volutpat sed, sagittis vel ex. Curabitur a risus quis metus volutpat eleifend. Sed sed vulputate orci, in ornare purus. Nulla consectetur tincidunt elit, non tincidunt lectus vestibulum accumsan. Maecenas accumsan neque sed libero euismod malesuada. Praesent nec felis eget enim dapibus facilisis id ac felis. Praesent in arcu non erat faucibus cursus. Donec lobortis fringilla tellus non vehicula. Proin sagittis pellentesque risus, vel fermentum lectus. Nunc luctus, eros et mollis vulputate, justo ante consequat mauris, eget elementum est mi non metus. Integer lacus lectus, varius at suscipit at, ultrices id velit.
 
-Aliquam pulvinar enim vel tellus laoreet ullamcorper. Praesent est nunc, rhoncus vel eros et, ornare rutrum ante. Vestibulum dapibus vitae nisi luctus sodales. Sed et elit eu ligula commodo fringilla non vel nunc. Morbi tincidunt, tortor feugiat blandit pharetra, erat leo gravida tortor, fermentum pharetra ligula urna in ligula. Donec ac ligula orci. Cras molestie neque in ipsum feugiat dignissim.
 
-Integer vel neque dictum, mollis lacus a, sollicitudin ex. Suspendisse sit amet feugiat ex. Nam convallis quis massa ac finibus. Nulla condimentum dui lorem. Donec varius metus a dignissim feugiat. Nunc malesuada ultrices iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec dictum nulla nec erat suscipit congue. Nunc quis vulputate ipsum, quis viverra arcu.
+                          THE COMPLETE SHERLOCK HOLMES
 
-Integer eu dui arcu. Quisque sagittis ligula libero. Pellentesque turpis mauris, mattis sed ullamcorper sit amet, vehicula at nunc. Aliquam pellentesque dolor ac tortor laoreet, a sagittis nulla fringilla. Pellentesque aliquet, nunc quis porta tristique, risus leo mollis odio, ac bibendum risus dolor vitae erat. Fusce eu suscipit lorem. Ut nec lectus scelerisque, tincidunt dolor fringilla, finibus libero. In ut elit ac est tempus sollicitudin vel id nunc. Praesent a dolor sit amet felis pulvinar semper. Nunc sodales felis tellus, at dictum erat sagittis vel. Nunc blandit lacus non ligula accumsan, ut pretium nisi suscipit. Vivamus at mi non libero sagittis pellentesque vitae vitae turpis. Nunc egestas augue eu nunc eleifend, at molestie lorem iaculis. Etiam porttitor sit amet neque a consectetur. Proin dictum viverra augue pharetra placerat. Maecenas vel porttitor urna, vehicula vestibulum turpis.
+                               Arthur Conan Doyle
 
-Curabitur cursus dolor vitae porta dictum. Nulla facilisi. Maecenas pretium, arcu vitae aliquet dictum, mauris urna aliquet lectus, nec aliquam felis lorem sed metus. Mauris nec nunc et magna facilisis congue. Duis non arcu nec ex accumsan posuere. Maecenas fringilla diam sed congue pulvinar. Mauris mi enim, suscipit eu sem vitae, dictum suscipit arcu. Quisque semper arcu libero, id ultrices ex pretium eget.
 
-Nam rhoncus eu nibh nec fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec eget iaculis velit. Donec condimentum lectus ligula, et fringilla orci tempor ac. Donec blandit lorem at est sollicitudin, sed convallis massa tincidunt. Mauris in nisl metus. Pellentesque aliquet at purus eu rutrum. Vestibulum quam magna, facilisis nec leo id, fermentum tempor erat. Integer vulputate scelerisque mi, et aliquam quam tincidunt eu. Cras non lacus risus. Vestibulum id tincidunt libero, gravida rhoncus ex. In molestie, orci nec finibus viverra, diam diam lobortis risus, sit amet vestibulum ipsum ligula in ligula.
 
-Nunc a ante sollicitudin, viverra massa in, facilisis diam. Etiam eget vestibulum sapien, et suscipit tellus. Cras faucibus nunc quis placerat maximus. Mauris convallis lacus eget posuere posuere. Sed ac sodales nisi. Curabitur molestie, dolor tincidunt ultricies mattis, sapien turpis egestas arcu, nec tincidunt risus purus ut risus. Aliquam eget nunc in elit maximus mattis non id massa. Pellentesque felis quam, tristique a varius a, ullamcorper sed urna. Suspendisse mi nisi, sagittis pulvinar fermentum convallis, tempus eget nulla. Nulla auctor a odio in pretium. In porttitor est sit amet pellentesque congue. Proin non erat in tortor vulputate eleifend. Nulla facilisi.
+                                Table of contents
 
-Proin eu ornare est. Sed dapibus blandit felis. Nullam quis interdum nulla. Aenean eget ligula eu nisl dictum blandit in ultricies eros. Sed et sodales nunc. Duis scelerisque ligula ac nulla sagittis, sed suscipit neque dapibus. Donec placerat purus at quam vulputate fringilla.
+               A Study In Scarlet
 
-Fusce pretium rhoncus velit id sollicitudin. Sed ut dolor ex. Morbi ut tellus vel dolor finibus molestie eget nec eros. Duis varius neque eget odio faucibus aliquam. Phasellus tempus lacinia leo vel laoreet. Etiam ut augue eros. Praesent euismod vestibulum bibendum. Nam convallis, mauris eget suscipit pulvinar, nulla tortor tristique mi, vitae sodales ipsum lacus in nulla. Integer a leo tempus, auctor metus ac, semper felis. Sed rutrum metus vitae mauris blandit, eget feugiat massa hendrerit. Sed dictum dolor quis odio tempus hendrerit. Maecenas imperdiet ex nec vehicula euismod. Integer volutpat euismod ante, id posuere magna efficitur id.
+               The Sign of the Four
 
-Aenean nec justo ac diam ultrices imperdiet. Maecenas vel condimentum mauris. Nam nec nunc nec massa dictum gravida ut in augue. Nullam suscipit libero at odio dignissim, ac viverra lacus eleifend. Pellentesque vel sodales leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida orci id molestie consequat. Aliquam tincidunt sollicitudin mauris, at porta nunc consequat et. Praesent in risus ut nulla blandit dictum. Nullam efficitur nunc vel urna lobortis, at dapibus leo varius. Praesent ut finibus nibh, vitae scelerisque magna. Donec commodo, orci sed tristique efficitur, nunc dolor molestie lorem, in vehicula leo neque tincidunt risus. Vivamus placerat purus eget leo dapibus, gravida hendrerit nisi pretium.
+                  The Adventures of Sherlock Holmes
+               A Scandal in Bohemia
+               The Red-Headed League
+               A Case of Identity
+               The Boscombe Valley Mystery
+               The Five Orange Pips
+               The Man with the Twisted Lip
+               The Adventure of the Blue Carbuncle
+               The Adventure of the Speckled Band
+               The Adventure of the Engineer's Thumb
+               The Adventure of the Noble Bachelor
+               The Adventure of the Beryl Coronet
+               The Adventure of the Copper Beeches
 
-Integer ipsum enim, blandit vel facilisis a, vehicula in mauris. Fusce porttitor faucibus aliquet. Nullam commodo turpis in dui feugiat, vel posuere leo tincidunt. Mauris faucibus neque consectetur, interdum libero eget, commodo libero. Integer in metus egestas, molestie dui ut, pellentesque eros. Quisque diam est, sollicitudin eget ligula ac, gravida consequat elit. Mauris elementum et nisl ac pharetra. Ut vel odio metus. Sed et rhoncus mauris.
+                  The Memoirs of Sherlock Holmes
+               Silver Blaze
+               The Yellow Face
+               The Stock-Broker's Clerk
+               The "Gloria Scott"
+               The Musgrave Ritual
+               The Reigate Squires
+               The Crooked Man
+               The Resident Patient
+               The Greek Interpreter
+               The Naval Treaty
+               The Final Problem
 
-Fusce nec elementum mi, eu cursus sem. Vestibulum rutrum erat nisl, sed cursus purus condimentum vel. Ut vitae mi ex. Aliquam dapibus est eu enim semper feugiat. Suspendisse mauris eros, sollicitudin tristique turpis eu, aliquam egestas purus. Pellentesque rutrum, metus a suscipit interdum, magna purus dignissim nulla, id pharetra felis massa non tellus. Fusce ac facilisis ante.
+                  The Return of Sherlock Holmes
+               The Adventure of the Empty House
+               The Adventure of the Norwood Builder
+               The Adventure of the Dancing Men
+               The Adventure of the Solitary Cyclist
+               The Adventure of the Priory School
+               The Adventure of Black Peter
+               The Adventure of Charles Augustus Milverton
+               The Adventure of the Six Napoleons
+               The Adventure of the Three Students
+               The Adventure of the Golden Pince-Nez
+               The Adventure of the Missing Three-Quarter
+               The Adventure of the Abbey Grange
+               The Adventure of the Second Stain
 
-Nunc a posuere lacus, quis consequat erat. Integer eu maximus arcu. Curabitur at dolor sed nibh rutrum eleifend in at erat. Sed enim arcu, posuere ac hendrerit eget, venenatis a diam. Nulla vel felis nisl. Integer et dui libero. Curabitur at arcu vehicula, sodales lacus eget, dapibus nunc. Donec sit amet augue vitae nulla consequat malesuada bibendum ac libero. Aenean at augue vel lacus bibendum consequat a ut metus. In hac habitasse platea dictumst. Quisque rutrum vitae quam sed scelerisque.
+               The Hound of the Baskervilles
 
-Vestibulum vestibulum nisl non nunc porta, ullamcorper aliquam turpis ullamcorper. Etiam sed nisi ut lectus porttitor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lacus eu odio tempus sollicitudin. Sed id enim sit amet sapien ultrices dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales nec sapien in gravida. Cras porttitor, nisl quis ullamcorper auctor, nunc nunc euismod turpis, eu congue leo purus at nibh. Vivamus elementum libero ac ultricies ullamcorper. Maecenas egestas tincidunt tincidunt. Aenean faucibus iaculis erat at dapibus. Nullam sed diam quam. In sed elit cursus, aliquam libero in, maximus urna. Quisque porttitor pretium finibus. Morbi mollis eleifend ex quis vestibulum.
+               The Valley Of Fear
 
-Proin ac purus orci. Cras efficitur dignissim sapien, rutrum malesuada lectus rhoncus sed. Vivamus quis nisi tempus lorem venenatis vestibulum. Duis orci est, condimentum sed pharetra sed, gravida a magna. Cras condimentum felis vel imperdiet tempus. Phasellus ut tellus orci. Vivamus id faucibus magna, ac posuere tortor. Cras sed metus in nulla vulputate vulputate. Curabitur a vestibulum quam. Nulla viverra eleifend justo eget semper. Maecenas vel diam ut nibh pulvinar scelerisque. Nullam purus mi, varius vitae tortor ac, varius fringilla diam. Nulla tempus, dolor et accumsan varius, justo nibh accumsan nulla, quis pretium ligula neque vel neque. Nunc eget neque id leo auctor tincidunt. Vestibulum aliquet, magna accumsan iaculis egestas, purus ipsum tempus mauris, at tristique ligula magna et purus. Aenean eget fringilla elit, nec sollicitudin ligula.
+                  His Last Bow
+               Preface
+               The Adventure of Wisteria Lodge
+               The Adventure of the Cardboard Box
+               The Adventure of the Red Circle
+               The Adventure of the Bruce-Partington Plans
+               The Adventure of the Dying Detective
+               The Disappearance of Lady Frances Carfax
+               The Adventure of the Devil's Foot
+               His Last Bow
 
-Phasellus eget massa convallis orci accumsan rutrum eu a ante. Curabitur tincidunt efficitur nunc, non molestie nibh sodales fringilla. Sed tincidunt efficitur lacus sed dictum. Suspendisse vulputate feugiat pretium. Ut mi justo, commodo non leo at, ornare viverra arcu. Maecenas at dictum lectus, id rutrum dolor. Nulla pharetra eget sapien non placerat. Integer sit amet vestibulum sem. Vivamus vulputate, mauris at sodales gravida, augue arcu ullamcorper mi, eget blandit odio ligula at nunc. Donec at erat ut magna dapibus ullamcorper non in urna. Etiam faucibus ornare lorem, scelerisque posuere ante elementum in. Mauris eu sem sit amet odio molestie dignissim non eu urna. Aenean id scelerisque nulla. Fusce eu magna vitae ante ornare dictum. Vestibulum auctor est sit amet tincidunt egestas. Quisque pretium euismod nibh, et placerat magna lacinia vitae.
+                  The Case-Book of Sherlock Holmes
+               Preface
+               The Illustrious Client
+               The Blanched Soldier
+               The Adventure Of The Mazarin Stone
+               The Adventure of the Three Gables
+               The Adventure of the Sussex Vampire
+               The Adventure of the Three Garridebs
+               The Problem of Thor Bridge
+               The Adventure of the Creeping Man
+               The Adventure of the Lion's Mane
+               The Adventure of the Veiled Lodger
+               The Adventure of Shoscombe Old Place
+               The Adventure of the Retired Colourman
 
-Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer et erat ut augue laoreet venenatis eu nec felis. Aenean dictum sollicitudin odio a venenatis. Nam blandit turpis in elit interdum, ut mattis quam hendrerit. Vestibulum sagittis ornare augue, in dapibus massa luctus tincidunt. Etiam mollis tincidunt augue, ut elementum turpis imperdiet nec. In vel mauris mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean eu pharetra ipsum. Fusce bibendum iaculis tortor sed congue. Ut vehicula tincidunt enim. Nulla neque nisl, dictum nec vehicula in, congue euismod leo. Ut ac risus in tortor consequat semper eu ultricies libero.
 
-Donec maximus neque ipsum, eget luctus dui congue eget. Sed semper mollis magna, id porta felis elementum ac. Morbi sed egestas nisi. Vestibulum scelerisque elementum turpis, a consequat nibh ullamcorper quis. Donec eu tempus ligula, et scelerisque tortor. Quisque sagittis facilisis iaculis. Fusce rutrum enim et libero venenatis condimentum. Pellentesque blandit nisi eget ante faucibus, sed commodo ante porttitor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque massa odio, tristique sit amet orci eget, dignissim egestas lorem. Nunc iaculis erat at erat sollicitudin lacinia.
 
-Phasellus lacus felis, posuere ut dapibus vitae, consectetur vel dui. Cras euismod tellus eget vestibulum eleifend. Suspendisse scelerisque metus lorem, sed porta dui elementum in. Nulla facilisi. Nulla facilisi. Donec id scelerisque neque. Fusce sit amet dui consectetur, aliquam ligula ac, elementum dolor. Aenean eu risus pellentesque, ullamcorper enim ac, sodales ante. Donec suscipit nisi in ornare dictum. Sed egestas facilisis lorem quis maximus. Proin nibh est, imperdiet et est nec, porttitor tempor nulla. Cras pharetra congue orci, sit amet volutpat ex ultricies at. Praesent venenatis, felis a varius commodo, tortor tortor tincidunt turpis, quis elementum metus ligula sit amet ligula. Nunc consequat lorem ut interdum feugiat. Vestibulum auctor erat metus, vitae egestas ipsum interdum at.
 
-Sed aliquet nisi nec nulla elementum, quis maximus velit semper. Phasellus in dignissim lacus, sit amet accumsan nisi. Pellentesque tincidunt urna eros, ut placerat dolor aliquet eu. In eu magna gravida, consequat magna vel, feugiat lorem. Aenean sed magna ex. Nullam sit amet porttitor odio, vitae vestibulum nunc. Integer eget nulla mi. Maecenas imperdiet erat lorem, at imperdiet sapien laoreet ut. Nulla nec blandit arcu. Morbi id orci sapien. Fusce felis odio, eleifend vel vehicula et, tempor ac leo. Fusce arcu felis, varius at quam id, vulputate mattis sem.
 
-Donec diam sapien, sollicitudin sed sagittis nec, tincidunt nec sapien. Vestibulum elementum nibh non enim tincidunt imperdiet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus blandit ultricies dolor, non dapibus lectus maximus quis. Morbi cursus eu diam eu tincidunt. Duis non massa consequat nisl elementum gravida accumsan et quam. Morbi tortor diam, suscipit ut arcu eu, aliquam molestie arcu. Phasellus vel sodales lorem. Vestibulum interdum vel lacus ac varius. Etiam rutrum pellentesque arcu nec imperdiet. Integer at molestie est. Nullam ut facilisis mi, sit amet iaculis mi. Quisque cursus faucibus sem sit amet lobortis. Pellentesque id justo diam. Nullam ac sem ante. Duis efficitur metus rhoncus leo pellentesque blandit.
 
-Vestibulum ut ipsum id ligula gravida maximus. Nulla facilisi. Quisque id vulputate velit. Nam sodales, nisl dictum consequat pharetra, elit tellus pretium leo, nec mattis neque enim ut metus. Fusce convallis ex a scelerisque volutpat. Integer sodales lobortis velit euismod hendrerit. Quisque odio metus, suscipit at nunc a, lacinia dignissim risus. Suspendisse ornare ut lectus non tempor. Aliquam egestas leo ex, ut rutrum massa bibendum sit amet. Etiam luctus purus venenatis lacus tempor gravida. Proin non diam id quam fermentum sagittis.
 
-In commodo mi eget dui suscipit, vel lobortis orci pretium. Aliquam a justo sed nisi ultricies mollis ut vel est. Duis mauris mauris, porttitor sed vestibulum sit amet, ornare eu diam. Nullam sed auctor turpis. Sed pharetra massa ipsum, sed accumsan nisi luctus nec. Suspendisse sapien tellus, accumsan ac quam vitae, congue dignissim arcu. Nulla ut pharetra velit, quis dignissim augue. Nulla suscipit arcu ut ante ultricies aliquet. Vivamus vitae facilisis leo. Fusce rutrum, lacus condimentum imperdiet tempor, magna massa interdum ante, vel suscipit mi nisi et nisl.
 
-Suspendisse sed magna ac velit hendrerit laoreet. Nam vel tellus orci. Cras eget imperdiet purus, ac interdum leo. Mauris congue nulla vitae nisl viverra convallis et id elit. Duis dui eros, laoreet et quam ac, volutpat faucibus velit. In condimentum vehicula justo, ut elementum lacus aliquam quis. Nunc quis scelerisque dui. Sed ut augue imperdiet, iaculis tortor vel, pretium odio. Praesent leo sem, blandit vitae augue at, scelerisque convallis leo.
 
-Pellentesque pretium accumsan orci vitae pellentesque. Suspendisse et ipsum tortor. Maecenas ligula justo, lobortis id quam sed, placerat elementum erat. Donec purus dui, tincidunt nec iaculis ut, dictum at turpis. Maecenas ornare congue magna, at sagittis diam bibendum in. Mauris finibus semper cursus. Nulla sed massa nec nisl ornare auctor nec congue libero. Aliquam vel ex non arcu fermentum vehicula. Ut felis eros, lacinia eu velit vitae, hendrerit elementum est.
 
-Maecenas non diam arcu. Vivamus gravida libero orci, in posuere ipsum facilisis accumsan. Proin nec commodo nibh. Duis auctor sem orci, et interdum neque tristique in. Proin vitae imperdiet purus. Praesent ac malesuada felis, vel porttitor lorem. Sed pellentesque mauris eget lacinia tristique. Quisque a diam pretium, elementum sapien id, varius tortor. Cras mi libero, lobortis in elit eu, viverra malesuada erat. Mauris pharetra dapibus erat. Aliquam vel lacinia diam. Integer ut quam cursus nisi accumsan malesuada et vel diam. Fusce commodo pharetra felis in auctor. Nullam condimentum et lorem sed molestie.
 
-Vestibulum eget maximus ante. Praesent vulputate metus eget sem venenatis, vel faucibus ex interdum. Cras non dolor viverra, scelerisque velit et, feugiat ipsum. Duis iaculis felis lacus, in fermentum lectus ultrices in. Pellentesque fringilla turpis vel arcu pulvinar pulvinar. Mauris ultricies nulla nisl, quis mollis nunc feugiat sed. Sed faucibus auctor dignissim. In quis molestie ante. Duis sit amet turpis libero. Donec ornare sed ex et fermentum. Nam fermentum vel tortor quis vestibulum. Morbi bibendum luctus nisi non dignissim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla finibus tincidunt nunc, quis tincidunt lorem aliquam at.
+                               A STUDY IN SCARLET
 
-Donec eget urna congue, sagittis eros sit amet, vehicula orci. Etiam vel ullamcorper ligula. Quisque a feugiat arcu, eget dignissim eros. Nullam ultrices diam sed viverra mollis. Nam sit amet lorem id massa euismod malesuada. Suspendisse posuere, purus at euismod volutpat, enim lorem tristique metus, vitae tristique augue quam sit amet felis. Phasellus ac dignissim sem. Suspendisse lacinia interdum commodo. Sed ac ante rutrum, ultrices lorem sit amet, ornare massa. Integer venenatis aliquam justo, non tempor lorem ultrices vulputate. Integer sapien lorem, vehicula a auctor in, bibendum vel leo. Ut id nisi fermentum, iaculis est ac, eleifend mauris. Suspendisse in ipsum ante. Suspendisse porta viverra turpis, nec mollis velit molestie nec. Aenean elementum tempus neque, ac pellentesque metus ultricies eu.
 
-Vestibulum scelerisque volutpat neque id maximus. Nunc porta purus sit amet felis gravida mattis. Pellentesque erat erat, varius vitae lorem eu, auctor imperdiet arcu. Nulla id feugiat metus. Vivamus aliquam vehicula porttitor. Ut quam leo, lacinia ut lobortis feugiat, eleifend id turpis. Morbi consequat neque sed efficitur ultrices. Donec tincidunt eu velit eget dapibus. Pellentesque magna nunc, venenatis dictum leo in, convallis pretium neque. Morbi eu est at nisl tincidunt dictum facilisis id urna. Pellentesque ullamcorper lorem odio, id vehicula arcu pellentesque at. In semper dui vel pretium porttitor. Nunc imperdiet lorem ipsum, sed condimentum urna maximus ac. Donec dignissim varius dui eu pretium. Nunc varius luctus nisi ut bibendum. Curabitur eu eros nec nunc iaculis convallis.
 
-Vivamus fermentum gravida vehicula. Nunc aliquet feugiat ex sit amet mollis. Sed purus nisi, placerat nec risus non, posuere faucibus neque. Nulla eu vulputate mauris. Curabitur sit amet cursus sapien, in fringilla quam. Pellentesque porttitor in libero sit amet placerat. Morbi pellentesque risus magna, eu blandit felis congue eu. Phasellus luctus quam dui, ut mollis orci malesuada non. Praesent sapien nulla, convallis quis dignissim id, lacinia ut augue. Pellentesque iaculis augue a luctus lacinia. Vivamus quis semper orci. Suspendisse potenti. Pellentesque nec massa commodo, sodales sapien id, dignissim dolor. Pellentesque et tempor ligula, nec sollicitudin erat. Aenean finibus odio arcu, ac imperdiet urna aliquet vel.
 
-Curabitur volutpat sed lorem non porta. Sed laoreet dolor at odio maximus, aliquet euismod eros feugiat. Suspendisse placerat sagittis tellus, vel pretium libero bibendum at. Donec placerat vel ligula nec vestibulum. Donec vitae hendrerit purus. Aenean sit amet sem in turpis venenatis faucibus et nec leo. Nulla risus metus, laoreet vitae odio quis, consectetur vehicula massa. Etiam in placerat arcu. In dictum pharetra laoreet. Nunc commodo nisl non pretium malesuada. Nulla eu condimentum dui. In ultrices pharetra dolor vitae lacinia. Mauris neque eros, tincidunt in porttitor sit amet, dictum nec mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec a turpis non diam pharetra rhoncus ultrices a purus. In aliquam, ex non vestibulum pretium, ante neque facilisis nulla, id molestie tellus dui ac ipsum.
 
-Fusce aliquet ultrices augue, ac porttitor nisl faucibus at. Proin pretium mattis ante vitae sodales. Aliquam fringilla dapibus neque nec scelerisque. Nam elit augue, pretium id elementum sit amet, interdum nec erat. Phasellus vitae blandit turpis, a porttitor dolor. Ut bibendum convallis varius. Nulla porttitor nisl quis vulputate lacinia. Phasellus rhoncus convallis lectus, a maximus orci posuere ac. In quis felis neque. Cras nunc arcu, molestie at mauris ut, placerat eleifend ligula. Praesent ultrices risus quis malesuada accumsan. Maecenas et vestibulum leo. Maecenas imperdiet, leo a vehicula ultricies, sem est congue ante, nec consectetur sapien erat sed neque. Duis fermentum purus massa, at auctor dolor scelerisque sit amet. Vestibulum vitae malesuada neque. Vestibulum vehicula ex sit amet enim congue, eget eleifend est blandit.
+                                Table of contents
 
-Sed aliquam mauris nec sollicitudin laoreet. Praesent non risus at tellus suscipit egestas. Curabitur fermentum ante feugiat elit vestibulum aliquet. Suspendisse auctor erat sit amet dolor mollis dapibus. Mauris venenatis magna sed purus bibendum, at aliquam magna porta. Nunc ac facilisis arcu, sit amet dictum nisi. Maecenas aliquet metus sed ex dignissim, efficitur elementum arcu placerat. Morbi magna sem, varius nec augue et, congue tincidunt odio. Duis sollicitudin erat vulputate ultricies commodo. Sed velit felis, varius at varius ac, scelerisque vel ipsum. Vestibulum molestie risus eu tellus porta, at rutrum mauris laoreet. In dictum urna eu neque luctus semper. Donec vestibulum leo quis velit mollis tristique. Phasellus et arcu ac arcu maximus commodo quis eu arcu.
+         Part I
+        Mr. Sherlock Holmes
+        The Science Of Deduction
+        The Lauriston Garden Mystery
+        What John Rance Had To Tell
+        Our Advertisement Brings A Visitor
+        Tobias Gregson Shows What He Can Do
+        Light In The Darkness
 
-Phasellus viverra ligula nibh, eget aliquam augue viverra quis. Cras auctor bibendum semper. Aenean pellentesque ligula vitae mauris rhoncus euismod. Nullam viverra dignissim odio, eu scelerisque dolor dictum sit amet. Aliquam commodo, leo eu venenatis luctus, tortor mi luctus lectus, ut euismod neque tellus eget dui. Curabitur in turpis a massa elementum auctor vitae ac lacus. Curabitur in nibh sed nunc aliquam aliquet ac in mauris. Ut lacinia ipsum eu ligula scelerisque, id tristique odio ullamcorper. Nullam interdum hendrerit ex id dapibus. Sed hendrerit leo pulvinar quam mattis, et hendrerit est venenatis. Phasellus commodo vitae diam quis volutpat. Fusce non lacinia libero, in tempor nisl. Donec ut neque at quam laoreet lacinia a egestas mi.
+         Part II
+        On The Great Alkali Plain
+        The Flower Of Utah
+        John Ferrier Talks With The Prophet
+        A Flight For Life
+        The Avenging Angels
+        A Continuation Of The Reminiscences Of John Watson, M.D.
+        The Conclusion
 
-Sed elementum, sapien id accumsan hendrerit, ex erat pulvinar nisi, eget feugiat arcu magna et arcu. Aenean tempor vehicula nisl ac dignissim. Nullam sagittis, risus quis aliquet blandit, arcu felis blandit lorem, nec luctus erat mauris aliquam orci. Duis nisl justo, fermentum nec rhoncus at, convallis et ligula. Vivamus congue accumsan pretium. Cras efficitur ac enim in dictum. Sed tincidunt tempor tincidunt.
 
-Fusce rhoncus dictum laoreet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque tincidunt egestas tristique. Proin sagittis, ante ullamcorper suscipit sollicitudin, augue mi faucibus dui, et congue quam nulla sed nisi. Nullam hendrerit dolor ligula, vitae eleifend felis scelerisque non. Etiam tincidunt elit in mauris vulputate scelerisque. Mauris sollicitudin neque orci, in lobortis metus porttitor eget. Sed ut ligula vel magna sodales bibendum et in ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
 
-Etiam accumsan diam nec velit congue, eget feugiat justo congue. In nisi ligula, laoreet ut convallis sed, tempus vel augue. Curabitur et fringilla turpis, vel pretium urna. Sed at dui quis ipsum mattis posuere. Suspendisse metus ex, volutpat a ultricies non, fringilla viverra neque. Suspendisse vehicula efficitur nisi, nec congue turpis auctor a. Sed at orci magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla diam felis, eleifend at libero quis, fringilla finibus ex. Aliquam aliquet commodo elit, ut tincidunt magna molestie ac. Maecenas pulvinar sed felis in egestas. Morbi erat libero, ultricies non imperdiet at, faucibus id nisl. Curabitur metus massa, venenatis vel tortor id, ultrices accumsan ante.
 
-Morbi urna sem, pretium eget augue id, lobortis semper neque. Curabitur libero magna, viverra sed ultrices sit amet, varius et urna. Aenean velit velit, sagittis non dui vel, elementum aliquet dolor. Etiam ac fermentum nisi. Etiam ultricies, magna vitae auctor pharetra, augue ligula varius tellus, in fermentum quam est vitae purus. Fusce porttitor mi vel mi euismod pretium. Nunc non massa a purus tincidunt blandit at quis diam. Praesent a mauris eros. Mauris elementum in nisi quis varius. Cras sit amet congue enim. Etiam dui tortor, feugiat eget eleifend vulputate, interdum vitae arcu. Nam sed condimentum metus. Vivamus at facilisis ligula. Phasellus mattis consequat odio, non iaculis est mattis a. Morbi auctor vestibulum neque, vel fermentum risus molestie vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
-Duis mattis ultricies molestie. Nullam lacinia venenatis ligula. Proin fermentum, magna a luctus lacinia, mauris mauris ultrices lectus, ac aliquam elit odio ut sapien. Curabitur ac laoreet dolor. Donec et risus a libero consequat laoreet eget a felis. Fusce id iaculis purus, vitae efficitur orci. Vestibulum eu semper massa. Suspendisse in accumsan eros. Quisque cursus facilisis tellus et scelerisque. Cras pulvinar nunc eu elit volutpat rhoncus. Mauris in pharetra risus. Vivamus vel molestie justo.
 
-Etiam at dolor nulla. Proin ullamcorper hendrerit felis non convallis. Quisque rutrum mattis condimentum. Suspendisse eget purus tellus. Cras aliquam tortor in mi iaculis, at sodales justo dictum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus a nulla in velit ultrices tristique. Praesent a nibh bibendum, euismod felis quis, varius libero. Etiam tincidunt diam et sapien porta maximus. Integer sodales tincidunt nunc a pharetra. Phasellus consequat facilisis enim et vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis sit amet massa sit amet magna gravida blandit. Donec dignissim auctor urna, ac mattis ligula. Integer ac ultricies tortor.
 
-Sed a eleifend neque. Nunc eget rhoncus nulla. Donec egestas orci vel ipsum fermentum, bibendum ornare diam vestibulum. Vivamus urna magna, euismod ut dui vel, blandit aliquam nunc. Maecenas non neque quis nibh tempor ornare non id tortor. Phasellus sollicitudin ipsum et orci iaculis, sit amet tristique urna aliquam. Nulla metus arcu, varius non augue nec, consectetur varius leo. Nullam vel viverra mauris. Nam eu dui vulputate, fringilla augue ut, cursus dolor. Nam bibendum bibendum ex, eu tincidunt felis lobortis eget. Nam iaculis pretium massa, a ultrices lacus vulputate quis. Integer vehicula id risus in convallis. Mauris faucibus, nisl vehicula volutpat tincidunt, diam nulla suscipit libero, vitae scelerisque leo ante sit amet augue. Pellentesque pharetra pellentesque consectetur. Nulla sed rutrum nisi.
 
-Curabitur dignissim sollicitudin faucibus. Sed pharetra posuere odio. Integer luctus maximus leo, quis tempor dui egestas vitae. Vivamus placerat dolor condimentum massa tempus, in facilisis velit hendrerit. Quisque ante arcu, tincidunt non dolor volutpat, accumsan semper turpis. Suspendisse fringilla nulla sed libero ultricies, nec pulvinar magna sollicitudin. Suspendisse est enim, fringilla scelerisque ultricies vitae, pulvinar vitae nisl. Nulla efficitur suscipit sem. Aliquam egestas ullamcorper risus sit amet convallis. Proin ornare leo nisi, eu cursus dolor egestas vitae. Etiam in iaculis sapien, sit amet feugiat massa.
 
-Nulla in libero tellus. Morbi volutpat, est vel ornare facilisis, arcu lorem viverra metus, eu fermentum ex sem quis risus. Mauris tristique ex quis ante hendrerit hendrerit. Nunc orci nunc, cursus ullamcorper nisi maximus, porta mollis diam. Nam nunc ante, mattis eu mi id, viverra dapibus dolor. Phasellus at faucibus leo. Morbi facilisis nulla risus, in venenatis purus vestibulum quis. Duis hendrerit sapien eu nulla venenatis condimentum. Duis congue tellus in velit aliquam ultricies. Nam nec augue risus.
 
-Pellentesque nisi ipsum, sagittis non nunc sit amet, venenatis dapibus felis. Nullam at congue nunc. Nulla dictum vulputate tempor. Phasellus vulputate nibh sit amet ornare molestie. Aliquam pellentesque lectus sapien, in placerat nulla mollis ut. Vivamus eget est mi. Integer maximus suscipit pretium.
 
-Nunc in mi a lacus rutrum consectetur. Proin et dui quam. Praesent suscipit viverra turpis nec faucibus. Pellentesque nec ornare mauris. Proin ut risus at tellus sollicitudin pellentesque in vel ante. Morbi tempor eros a dolor egestas, nec congue enim pellentesque. Phasellus sit amet tempor mauris. Suspendisse vitae ante sem. Quisque quis interdum eros. Suspendisse dignissim dui sit amet rutrum ornare.
 
-Ut dapibus, dolor et ullamcorper efficitur, neque odio fermentum est, pellentesque dignissim sem diam et libero. Fusce ut magna consequat, gravida orci eu, congue ex. Pellentesque at velit sit amet est pellentesque eleifend id ac nibh. Nulla facilisi. Duis lobortis felis sed lobortis tincidunt. Phasellus consectetur, urna sed semper volutpat, dolor diam elementum ligula, ut viverra ex mauris et purus. Nam vestibulum suscipit enim ac congue. Nunc auctor tortor mi, eu aliquam mauris interdum vitae. Vestibulum fringilla, odio sit amet suscipit ultrices, eros lorem lacinia nibh, ut condimentum neque erat ac enim. Aenean posuere, risus et cursus laoreet, mauris lorem luctus leo, sed ullamcorper sem nulla consectetur mi. Suspendisse felis ipsum, ultrices nec dui at, pulvinar interdum felis. Fusce euismod ornare tellus non imperdiet. Aenean accumsan felis non vehicula ultricies.
 
-Nunc arcu lectus, sollicitudin consequat faucibus vitae, volutpat in nunc. Nunc tempor nec ex ac lacinia. Quisque diam turpis, blandit a justo molestie, feugiat interdum turpis. Suspendisse interdum commodo suscipit. Donec vitae metus hendrerit lorem tempus sollicitudin eget quis massa. Quisque porta sem a rhoncus convallis. Donec pharetra diam ac orci ultricies, a gravida erat vestibulum.
 
-Ut auctor ex non ex consectetur, sed cursus libero euismod. Proin tincidunt facilisis gravida. Fusce sollicitudin nibh eu tortor dignissim elementum. Mauris elit orci, imperdiet eu luctus id, elementum at leo. Curabitur at odio a urna rutrum interdum. Quisque eget tempus tortor. Praesent sodales porta quam vitae elementum. Nulla iaculis tristique quam nec laoreet. Cras varius sapien eget erat tincidunt cursus. Sed lectus tellus, ultricies a consequat ut, pellentesque sed odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum lacinia nisl tortor, non auctor sapien congue id. Cras fringilla velit nec magna tincidunt, sed suscipit odio porttitor. Pellentesque commodo lobortis purus id placerat. Ut at tincidunt ex. Cras rutrum mauris tortor, sit amet ultricies diam consectetur sed.
+
+
+
+
+
+                                      PART I
+
+                   (Being a reprint from the reminiscences of
+                              John H. Watson, M.D.,
+                      late of the Army Medical Department.)
+
+
+
+
+
+          CHAPTER I
+          Mr. Sherlock Holmes
+
+
+     In the year 1878 I took my degree of Doctor of Medicine of the
+     University of London, and proceeded to Netley to go through the
+     course prescribed for surgeons in the army. Having completed my
+     studies there, I was duly attached to the Fifth Northumberland
+     Fusiliers as Assistant Surgeon. The regiment was stationed in India
+     at the time, and before I could join it, the second Afghan war had
+     broken out. On landing at Bombay, I learned that my corps had
+     advanced through the passes, and was already deep in the enemy's
+     country. I followed, however, with many other officers who were in
+     the same situation as myself, and succeeded in reaching Candahar in
+     safety, where I found my regiment, and at once entered upon my new
+     duties.
+
+     The campaign brought honours and promotion to many, but for me it had
+     nothing but misfortune and disaster. I was removed from my brigade
+     and attached to the Berkshires, with whom I served at the fatal
+     battle of Maiwand. There I was struck on the shoulder by a Jezail
+     bullet, which shattered the bone and grazed the subclavian artery. I
+     should have fallen into the hands of the murderous Ghazis had it not
+     been for the devotion and courage shown by Murray, my orderly, who
+     threw me across a pack-horse, and succeeded in bringing me safely to
+     the British lines.
+
+     Worn with pain, and weak from the prolonged hardships which I had
+     undergone, I was removed, with a great train of wounded sufferers, to
+     the base hospital at Peshawar. Here I rallied, and had already
+     improved so far as to be able to walk about the wards, and even to
+     bask a little upon the verandah, when I was struck down by enteric
+     fever, that curse of our Indian possessions. For months my life was
+     despaired of, and when at last I came to myself and became
+     convalescent, I was so weak and emaciated that a medical board
+     determined that not a day should be lost in sending me back to
+     England. I was dispatched, accordingly, in the troopship Orontes, and
+     landed a month later on Portsmouth jetty, with my health
+     irretrievably ruined, but with permission from a paternal government
+     to spend the next nine months in attempting to improve it.
+
+     I had neither kith nor kin in England, and was therefore as free as
+     air--or as free as an income of eleven shillings and sixpence a day
+     will permit a man to be. Under such circumstances, I naturally
+     gravitated to London, that great cesspool into which all the loungers
+     and idlers of the Empire are irresistibly drained. There I stayed for
+     some time at a private hotel in the Strand, leading a comfortless,
+     meaningless existence, and spending such money as I had, considerably
+     more freely than I ought. So alarming did the state of my finances
+     become, that I soon realized that I must either leave the metropolis
+     and rusticate somewhere in the country, or that I must make a
+     complete alteration in my style of living. Choosing the latter
+     alternative, I began by making up my mind to leave the hotel, and to
+     take up my quarters in some less pretentious and less expensive
+     domicile.
+
+     On the very day that I had come to this conclusion, I was standing at
+     the Criterion Bar, when some one tapped me on the shoulder, and
+     turning round I recognized young Stamford, who had been a dresser
+     under me at Bart's. The sight of a friendly face in the great
+     wilderness of London is a pleasant thing indeed to a lonely man. In
+     old days Stamford had never been a particular crony of mine, but now
+     I hailed him with enthusiasm, and he, in his turn, appeared to be
+     delighted to see me. In the exuberance of my joy, I asked him to
+     lunch with me at the Holborn, and we started off together in a
+     hansom.
+
+     "Whatever have you been doing with yourself, Watson?" he asked in
+     undisguised wonder, as we rattled through the crowded London streets.
+     "You are as thin as a lath and as brown as a nut."
+
+     I gave him a short sketch of my adventures, and had hardly concluded
+     it by the time that we reached our destination.
+
+     "Poor devil!" he said, commiseratingly, after he had listened to my
+     misfortunes. "What are you up to now?"
+
+     "Looking for lodgings," I answered. "Trying to solve the problem as
+     to whether it is possible to get comfortable rooms at a reasonable
+     price."
+
+     "That's a strange thing," remarked my companion; "you are the second
+     man to-day that has used that expression to me."
+
+     "And who was the first?" I asked.
+
+     "A fellow who is working at the chemical laboratory up at the
+     hospital. He was bemoaning himself this morning because he could not
+     get someone to go halves with him in some nice rooms which he had
+     found, and which were too much for his purse."
+
+     "By Jove!" I cried, "if he really wants someone to share the rooms
+     and the expense, I am the very man for him. I should prefer having a
+     partner to being alone."
+
+     Young Stamford looked rather strangely at me over his wine-glass.
+     "You don't know Sherlock Holmes yet," he said; "perhaps you would not
+     care for him as a constant companion."
+
+     "Why, what is there against him?"
+
+     "Oh, I didn't say there was anything against him. He is a little
+     queer in his ideas--an enthusiast in some branches of science. As far
+     as I know he is a decent fellow enough."
+
+     "A medical student, I suppose?" said I.
+
+     "No--I have no idea what he intends to go in for. I believe he is
+     well up in anatomy, and he is a first-class chemist; but, as far as I
+     know, he has never taken out any systematic medical classes. His
+     studies are very desultory and eccentric, but he has amassed a lot of
+     out-of-the way knowledge which would astonish his professors."
+
+     "Did you never ask him what he was going in for?" I asked.
+
+     "No; he is not a man that it is easy to draw out, though he can be
+     communicative enough when the fancy seizes him."
+
+     "I should like to meet him," I said. "If I am to lodge with anyone, I
+     should prefer a man of studious and quiet habits. I am not strong
+     enough yet to stand much noise or excitement. I had enough of both in
+     Afghanistan to last me for the remainder of my natural existence. How
+     could I meet this friend of yours?"
+
+     "He is sure to be at the laboratory," returned my companion. "He
+     either avoids the place for weeks, or else he works there from
+     morning to night. If you like, we shall drive round together after
+     luncheon."
+
+     "Certainly," I answered, and the conversation drifted away into other
+     channels.
+
+     As we made our way to the hospital after leaving the Holborn,
+     Stamford gave me a few more particulars about the gentleman whom I
+     proposed to take as a fellow-lodger.
+
+     "You mustn't blame me if you don't get on with him," he said; "I know
+     nothing more of him than I have learned from meeting him occasionally
+     in the laboratory. You proposed this arrangement, so you must not
+     hold me responsible."
+
+     "If we don't get on it will be easy to part company," I answered. "It
+     seems to me, Stamford," I added, looking hard at my companion, "that
+     you have some reason for washing your hands of the matter. Is this
+     fellow's temper so formidable, or what is it? Don't be mealy-mouthed
+     about it."
+
+     "It is not easy to express the inexpressible," he answered with a
+     laugh. "Holmes is a little too scientific for my tastes--it
+     approaches to cold-bloodedness. I could imagine his giving a friend a
+     little pinch of the latest vegetable alkaloid, not out of
+     malevolence, you understand, but simply out of a spirit of inquiry in
+     order to have an accurate idea of the effects. To do him justice, I
+     think that he would take it himself with the same readiness. He
+     appears to have a passion for definite and exact knowledge."
+
+     "Very right too."
+
+     "Yes, but it may be pushed to excess. When it comes to beating the
+     subjects in the dissecting-rooms with a stick, it is certainly taking
+     rather a bizarre shape."
+
+     "Beating the subjects!"
+
+     "Yes, to verify how far bruises may be produced after death. I saw
+     him at it with my own eyes."
+
+     "And yet you say he is not a medical student?"
+
+     "No. Heaven knows what the objects of his studies are. But here we
+     are, and you must form your own impressions about him." As he spoke,
+     we turned down a narrow lane and passed through a small side-door,
+     which opened into a wing of the great hospital. It was familiar
+     ground to me, and I needed no guiding as we ascended the bleak stone
+     staircase and made our way down the long corridor with its vista of
+     whitewashed wall and dun-coloured doors. Near the further end a low
+     arched passage branched away from it and led to the chemical
+     laboratory.
+
+     This was a lofty chamber, lined and littered with countless bottles.
+     Broad, low tables were scattered about, which bristled with retorts,
+     test-tubes, and little Bunsen lamps, with their blue flickering
+     flames. There was only one student in the room, who was bending over
+     a distant table absorbed in his work. At the sound of our steps he
+     glanced round and sprang to his feet with a cry of pleasure. "I've
+     found it! I've found it," he shouted to my companion, running towards
+     us with a test-tube in his hand. "I have found a re-agent which is
+     precipitated by hoemoglobin, and by nothing else." Had he discovered
+     a gold mine, greater delight could not have shone upon his features.
+
+     "Dr. Watson, Mr. Sherlock Holmes," said Stamford, introducing us.
+
+     "How are you?" he said cordially, gripping my hand with a strength
+     for which I should hardly have given him credit. "You have been in
+     Afghanistan, I perceive."
+
+     "How on earth did you know that?" I asked in astonishment.
+
+     "Never mind," said he, chuckling to himself. "The question now is
+     about hoemoglobin. No doubt you see the significance of this
+     discovery of mine?"
+
+     "It is interesting, chemically, no doubt," I answered, "but
+     practically--"
+
+     "Why, man, it is the most practical medico-legal discovery for years.
+     Don't you see that it gives us an infallible test for blood stains.
+     Come over here now!" He seized me by the coat-sleeve in his
+     eagerness, and drew me over to the table at which he had been
+     working. "Let us have some fresh blood," he said, digging a long
+     bodkin into his finger, and drawing off the resulting drop of blood
+     in a chemical pipette. "Now, I add this small quantity of blood to a
+     litre of water. You perceive that the resulting mixture has the
+     appearance of pure water. The proportion of blood cannot be more than
+     one in a million. I have no doubt, however, that we shall be able to
+     obtain the characteristic reaction." As he spoke, he threw into the
+     vessel a few white crystals, and then added some drops of a
+     transparent fluid. In an instant the contents assumed a dull mahogany
+     colour, and a brownish dust was precipitated to the bottom of the
+     glass jar.
+
+     "Ha! ha!" he cried, clapping his hands, and looking as delighted as a
+     child with a new toy. "What do you think of that?"
+
+     "It seems to be a very delicate test," I remarked.
+
+     "Beautiful! beautiful! The old Guiacum test was very clumsy and
+     uncertain. So is the microscopic examination for blood corpuscles.
+     The latter is valueless if the stains are a few hours old. Now, this
+     appears to act as well whether the blood is old or new. Had this test
+     been invented, there are hundreds of men now walking the earth who
+     would long ago have paid the penalty of their crimes."
+
+     "Indeed!" I murmured.
+
+     "Criminal cases are continually hinging upon that one point. A man is
+     suspected of a crime months perhaps after it has been committed. His
+     linen or clothes are examined, and brownish stains discovered upon
+     them. Are they blood stains, or mud stains, or rust stains, or fruit
+     stains, or what are they? That is a question which has puzzled many
+     an expert, and why? Because there was no reliable test. Now we have
+     the Sherlock Holmes' test, and there will no longer be any
+     difficulty."
+
+     His eyes fairly glittered as he spoke, and he put his hand over his
+     heart and bowed as if to some applauding crowd conjured up by his
+     imagination.
+
+     "You are to be congratulated," I remarked, considerably surprised at
+     his enthusiasm.
+
+     "There was the case of Von Bischoff at Frankfort last year. He would
+     certainly have been hung had this test been in existence. Then there
+     was Mason of Bradford, and the notorious Muller, and Lefevre of
+     Montpellier, and Samson of new Orleans. I could name a score of cases
+     in which it would have been decisive."
+
+     "You seem to be a walking calendar of crime," said Stamford with a
+     laugh. "You might start a paper on those lines. Call it the 'Police
+     News of the Past.'"
+
+     "Very interesting reading it might be made, too," remarked Sherlock
+     Holmes, sticking a small piece of plaster over the prick on his
+     finger. "I have to be careful," he continued, turning to me with a
+     smile, "for I dabble with poisons a good deal." He held out his hand
+     as he spoke, and I noticed that it was all mottled over with similar
+     pieces of plaster, and discoloured with strong acids.
+
+     "We came here on business," said Stamford, sitting down on a high
+     three-legged stool, and pushing another one in my direction with his
+     foot. "My friend here wants to take diggings, and as you were
+     complaining that you could get no one to go halves with you, I
+     thought that I had better bring you together."
+
+     Sherlock Holmes seemed delighted at the idea of sharing his rooms
+     with me. "I have my eye on a suite in Baker Street," he said, "which
+     would suit us down to the ground. You don't mind the smell of strong
+     tobacco, I hope?"
+
+     "I always smoke 'ship's' myself," I answered.
+
+     "That's good enough. I generally have chemicals about, and
+     occasionally do experiments. Would that annoy you?"
+
+     "By no means."
+
+     "Let me see--what are my other shortcomings. I get in the dumps at
+     times, and don't open my mouth for days on end. You must not think I
+     am sulky when I do that. Just let me alone, and I'll soon be right.
+     What have you to confess now? It's just as well for two fellows to
+     know the worst of one another before they begin to live together."
+
+     I laughed at this cross-examination. "I keep a bull pup," I said,
+     "and I object to rows because my nerves are shaken, and I get up at
+     all sorts of ungodly hours, and I am extremely lazy. I have another
+     set of vices when I'm well, but those are the principal ones at
+     present."
+
+     "Do you include violin-playing in your category of rows?" he asked,
+     anxiously.
+
+     "It depends on the player," I answered. "A well-played violin is a
+     treat for the gods--a badly-played one--"
+
+     "Oh, that's all right," he cried, with a merry laugh. "I think we may
+     consider the thing as settled--that is, if the rooms are agreeable to
+     you."
+
+     "When shall we see them?"
+
+     "Call for me here at noon to-morrow, and we'll go together and settle
+     everything," he answered.
+
+     "All right--noon exactly," said I, shaking his hand.
+
+     We left him working among his chemicals, and we walked together
+     towards my hotel.
+
+     "By the way," I asked suddenly, stopping and turning upon Stamford,
+     "how the deuce did he know that I had come from Afghanistan?"
+
+     My companion smiled an enigmatical smile. "That's just his little
+     peculiarity," he said. "A good many people have wanted to know how he
+     finds things out."
+
+     "Oh! a mystery is it?" I cried, rubbing my hands. "This is very
+     piquant. I am much obliged to you for bringing us together. 'The
+     proper study of mankind is man,' you know."
+
+     "You must study him, then," Stamford said, as he bade me good-bye.
+     "You'll find him a knotty problem, though. I'll wager he learns more
+     about you than you about him. Good-bye."
+
+     "Good-bye," I answered, and strolled on to my hotel, considerably
+     interested in my new acquaintance.

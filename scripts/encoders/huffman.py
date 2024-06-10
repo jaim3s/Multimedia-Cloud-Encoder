@@ -1,39 +1,50 @@
 from scripts.source_code import SourceCode
+from scripts.encoders.coding_method import CodingMethod
 from scripts.encoders.huffman_node import HuffmanNode
 from typing import List
 
-class Huffman:
-    def __init__(self, source: "Source", outputSymbols: List) -> None: 
-        self.source = source
-        self.outputSymbols = outputSymbols
-        self.d = len(self.outputSymbols)
+class Huffman(CodingMethod):
+    """
+    A class of the Huffman code method.
+
+        Attributes
+        ----------
+
+        source : "Source" 
+            Source of the text file (Symbols, Probability Distribution)
+        output_symbols : List[str]
+            The output symbols of the coding method
+        d : int
+            The arity of the Huffman code 
+        n : int
+            Number of symbols
+
+        Methods
+        -------
+
+        __str__(self) -> str:
+            Represents the Huffman codification in a string format.
+        __repr__(self) -> str:
+            Represents the Huffman codification in a string format for data structures.
+        init(self) -> List["HuffmanNode"]:
+            Sort the symbols based on it's probabilities and generate the initial nodes.
+        run(self) -> "HuffmanNode":
+            Execute the entire Huffman codification algorihtm.
+        mark(self, root: "HuffmanNode") -> None:
+            Mark each node of the tree with it's code word.
+        get_leaves(self, root: "HuffmanNode") -> List:
+            Get the leaves of the tree.
+        aux_get_leaves(self, root: "HuffmanNode", result: List[str]) -> None:
+            Auxiliary funciton to get the leaves of the tree.
+        get_source_code(self) -> "SourceCode":
+            Get the source code from the Huffman code.
+    """
+
+    def __init__(self, source: "Source", output_symbols: List[str]) -> None: 
+        super().__init__(source)
+        self.output_symbols = output_symbols
+        self.d = len(self.output_symbols)
         self.n = len(self.source.symbols)
-
-    def __str__(self) -> str:
-        """
-        Represents the huffman codification in a string format.
-
-            Parameters
-                None
-    
-            Returns
-                return The string format of the huffman codification
-        """
-
-        return self.source.__str__()
-
-    def __repr__(self) -> str:
-        """
-        Represents the huffman codification in a string format for data structures.
-
-            Parameters
-                None
-    
-            Returns
-                return The string format of the huffman codification
-        """
-
-        return self.source.__repr__()
 
     def init(self) -> List["HuffmanNode"]:
         """
@@ -43,7 +54,7 @@ class Huffman:
                 None
     
             Returns
-                return List of huffman nodes
+                return List of Huffman nodes
         """
 
         sorted_source = sorted(self.source.source, key=lambda symbol: symbol[1])
@@ -51,7 +62,7 @@ class Huffman:
 
     def run(self) -> "HuffmanNode":
         """
-        Execute the entire huffman codification algorihtm.
+        Execute the entire Huffman codification algorihtm.
 
             Parameters
                 None
@@ -112,7 +123,7 @@ class Huffman:
             for _ in range(len(queue)):
                 node = queue.pop(0)
                 for i in range(len(node.childs)):
-                    node.childs[i].mark = node.mark + self.outputSymbols[i]
+                    node.childs[i].mark = node.mark + self.output_symbols[i]
                     queue.append(node.childs[i])
 
     def get_leaves(self, root: "HuffmanNode") -> List:
@@ -130,9 +141,9 @@ class Huffman:
         self.aux_get_leaves(root, result)
         return result
 
-    def aux_get_leaves(self, root: "HuffmanNode", result: List) -> None:
+    def aux_get_leaves(self, root: "HuffmanNode", result: List[str]) -> None:
         """
-        Auxiliat funciton to get the leaves of the tree.
+        Auxiliary funciton to get the leaves of the tree.
 
             Parameters
                 root ("HuffmanNode"): The root of the tree
@@ -150,15 +161,15 @@ class Huffman:
 
     def get_source_code(self) -> "SourceCode":
         """
-        Get the source code from the huffman code.
+        Get the source code from the Huffman code.
 
             Parameters
                 None
     
             Returns
-                return Source code of the huffman code
+                return Source code of the Huffman code
         """
-
+        
         root = self.run()
         self.mark(root)
         return SourceCode(self.source.symbols, self.get_leaves(root))

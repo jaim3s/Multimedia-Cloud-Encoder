@@ -13,12 +13,20 @@ def main():
     """
 
     program = Program(
-        file_path="files/test.txt", 
+        file_path="files/mems.txt", 
         coding_method="huffman",
-        args=[]
+        args=[["0", "1"]]
     )
     
     program.run()
     
 if __name__ == "__main__":
     main()
+
+"""
+program = Program(
+    file_path="files/test.txt", 
+    coding_method="huffman",
+    args=[["0", "1"]]
+)
+"""

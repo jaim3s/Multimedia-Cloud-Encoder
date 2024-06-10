@@ -66,13 +66,13 @@ class VideoGenerator:
         min_w, min_h = min_resolution
         max_w, max_h = max_resolution
 
+        # Corner cases
         if self.total_pixels <= min_w*min_h:
             return min_resolution, 1
         elif self.total_pixels >= max_w*max_h:
-            return max_resolution, ceil((max_w*max_h)/self.total_pixels)
+            return max_resolution, ceil(self.total_pixels/(max_w*max_h))
 
         if max_w - min_w >= max_h - min_h:
-            print(max_w-min_w)
             dimensions = []
             for w in range(min_w, max_w+1):
                 if min_h <= ceil(self.total_pixels/w) <= max_h:
@@ -115,4 +115,4 @@ class VideoGenerator:
         """
 
         for i in range(len(self.images)):
-            self.images[i].save(folder_path+f"frame{i}.png")
+            self.images[i].save(folder_path+f"\\frame{i}.png")
