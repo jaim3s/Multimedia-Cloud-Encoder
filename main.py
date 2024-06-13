@@ -13,7 +13,7 @@ def main():
     """
 
     program = Program(
-        file_path="files/mems.txt", 
+        file_path="files/test.txt", 
         coding_method="huffman",
         args=[["0", "1"]]
     )

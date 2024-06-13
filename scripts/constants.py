@@ -10,6 +10,7 @@ current_directory = os.getcwd()
 
 imgs_folder_path = current_directory + "\\imgs"
 frame_imgs_folder_path = current_directory + "\\frame_imgs"
+videos_folder_path = current_directory + "\\videos"
 logs_text_file_path = current_directory + "\\logs\\log.txt"
 
 # Formats
