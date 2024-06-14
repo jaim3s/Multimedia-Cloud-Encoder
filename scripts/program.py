@@ -28,6 +28,8 @@ class Program:
             Name of the coding method to use
         args : tuple
             Extra arguments of the coding method
+        metrics : dict
+            Dictionary with the program metrics
 
         Methods
         -------
@@ -38,6 +40,8 @@ class Program:
             Create a file to write the given content.
         delete_files_in_folder(self, folder_path: str) -> None:
             Delete all the files of a given folder path.
+        show_metrics(self) -> None:
+            Show the metrics.
         run(self) -> None:
             Run the program.
     """
@@ -52,6 +56,7 @@ class Program:
         # Validate the kwargs arguments
         self.validate_kwargs(kwargs, self.valid_kwargs) 
         self.file_manager = FileManager(self.file_path)
+        self.metrics = {}
 
     def validate_kwargs(self, kwargs: dict, valid_kwargs: dict) -> None:
         """
@@ -110,6 +115,20 @@ class Program:
             except Exception as e:
                 print(f"Failed to delete {file_path}: {e}")
 
+    def show_metrics(self) -> None:
+        """
+        Show the metrics.
+
+            Parameters
+                None
+    
+            Returns
+                return None
+        """
+
+        for key in self.metrics:
+            print(key, ":", self.metrics[key])
+
     def run(self) -> None:
         """
         Run the program.
@@ -167,19 +186,19 @@ class Program:
 
         self.log(decoder_content)
 
+        print("Basic information")
         print("Content = Decoded content?:", content[:-1] == decoder_content)
-
-        # Print basic information about the file
         print("File path:", self.file_manager.file_path)
         print("Coding method:", self.coding_method)
-        print("Number of unique symbols:", len(self.file_manager.symbols))
-        print("Number of characters:", self.file_manager.length)
 
-        # Print information about the source code and the source
-        print("Average word length:", average_length)
-        print("Entropy:", entropy)
-        print("Efficiency", entropy/average_length)
+        # Save basic metrics
+        self.metrics["unique-characters"] = len(self.file_manager.symbols)
+        self.metrics["characters"] = self.file_manager.length
+        self.metrics["entropy"] = entropy
+        self.metrics["efficiency"] = entropy/average_length
+        self.metrics["pixels"] = video.total_pixels
+        self.metrics["dimensions"] = (video.width, video.height)
 
-        # Print information 
-        print("Number of pixels:", video.total_pixels)
-        print("Image dimensions:", video.width, video.height)
+        print("Metrics")
+
+        self.show_metrics()

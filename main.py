@@ -26,7 +26,7 @@ if __name__ == "__main__":
 """
 program = Program(
     file_path="files/test.txt", 
-    coding_method="huffman",
+    coding_method="block",
     args=[["0", "1"]]
 )
 """
