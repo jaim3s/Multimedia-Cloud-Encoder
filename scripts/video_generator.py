@@ -2,6 +2,7 @@ from scripts.image_generator import ImageGenerator
 from scripts.constants import *
 from typing import List
 from math import ceil
+import numpy as np
 import cv2, os
 
 class VideoGenerator:
@@ -35,8 +36,10 @@ class VideoGenerator:
             Find the best resolution for the total pixels.
         generate_images(self) -> List:
             Generate the video images (frames).
-        save(self, folder_path: str) -> None:
-            Create the image from the pixel array.
+        extract_frames(self, video_path: str, output_folder: str) -> None:
+            Extract the frames of the video.
+        create_video(self, folder_path: str, fps: int) -> None:
+            Create the video in the given format.
         save(self, file_path: str) -> None:
             Save the video in the given path.
     """
@@ -49,8 +52,9 @@ class VideoGenerator:
         self.dimensions, self.frames = self.fit_resolution()
         self.width, self.height = self.dimensions
         self.images = self.generate_images()
-        self.save(frame_imgs_folder_path)
-        self.create_video(frame_imgs_folder_path, videos_folder_path+"/output_video.mp4", 1)
+        self.save(original_frames_folder_path)
+        self.create_video(videos_folder_path+"/output_video.mp4", 1)
+        self.extract_frames(videos_folder_path+"/output_video.mp4", video_frames_imgs_folder_path)
 
     def fit_resolution(self) -> tuple:
         """
@@ -106,12 +110,39 @@ class VideoGenerator:
             images.append(ImageGenerator(self.coded_content[i: i+coded_content_width], self.bit_depth, self.dimensions).image)
         return images
 
-    def create_video(self, image_folder: str, folder_path: str, fps: int):
+    def extract_frames(self, video_path: str, output_folder: str) -> None:
         """
-        Create the video format.
+        Extract the frames of the video.
 
             Parameters
-                image_folder (str): Path of the images frames
+                video_path (str): (str): Path of the video.
+                output_folder (str): Path to save the video frames.
+
+            Returns
+                return List with the images
+        """
+
+        video_capture = cv2.VideoCapture(video_path)
+        if not video_capture.isOpened():
+            print("Error: Could not open video.")
+            return
+        if not os.path.exists(output_folder):
+            os.makedirs(output_folder)
+        frame_count = 0
+        while True:
+            ret, frame = video_capture.read()
+            if not ret:
+                break
+            frame_filename = os.path.join(output_folder, f"frame_{frame_count:04d}.png")
+            cv2.imwrite(frame_filename, frame)
+            frame_count += 1
+        video_capture.release()
+
+    def create_video(self, folder_path: str, fps: int) -> None:
+        """
+        Create the video in the given format.
+
+            Parameters
                 folder_path (str): (str): Path to save the video
                 fps (int): Number of FPS
 
@@ -119,24 +150,12 @@ class VideoGenerator:
                 return List with the images
         """
 
-        # Get the list of images
-        images = [img for img in os.listdir(image_folder) if img.endswith((".png", ".jpg", ".jpeg"))]
-        images.sort()  # Sort the images by name (assuming they are named sequentially)
-
-        # Read the first image to get the dimensions
-        frame = cv2.imread(os.path.join(image_folder, images[0]))
-        height, width, layers = frame.shape
-
-        # Define the codec and create VideoWriter object
-        fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # You can use 'XVID' or 'MJPG' as well
+        height, width, layers = np.array(self.images[0]).shape
+        # Define the codec and create VideoWriter object (H.264 codec)
+        fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Use 'mp4v' for H.264 codec
         video = cv2.VideoWriter(folder_path, fourcc, fps, (width, height))
-
-        for image in images:
-            img_path = os.path.join(image_folder, image)
-            frame = cv2.imread(img_path)
-            video.write(frame)
-
-        # Release the video writer object
+        for image in self.images:
+            video.write(np.array(image))
         video.release()
 
     def save(self, folder_path: str) -> None:

@@ -122,7 +122,7 @@ class Program:
         """
 
         # Delete all the files of the folder frame_imgs_folder_path
-        self.delete_files_in_folder(scripts.constants.frame_imgs_folder_path)
+        self.delete_files_in_folder(scripts.constants.original_frames_folder_path)
 
         # Get the probability distribution and create the source
         pd = self.file_manager.get_pd()
@@ -158,10 +158,8 @@ class Program:
             "youtube".lower()
         )
 
-        video.save(scripts.constants.frame_imgs_folder_path)
-
         # Decoder
-        decoder = Decoder(scripts.constants.frame_imgs_folder_path)
+        decoder = Decoder(scripts.constants.original_frames_folder_path)
 
         coded_content_decoder = decoder.get_coded_content()
 

@@ -1,34 +1,44 @@
 import cv2
 import os
+def extract_frames(video_path, output_folder):
+    # Open the video file
+    video_capture = cv2.VideoCapture(video_path)
+    
+    # Check if video opened successfully
+    if not video_capture.isOpened():
+        print("Error: Could not open video.")
+        return
 
-def create_video_from_images(image_folder, output_video, fps):
-    # Get the list of images
-    images = [img for img in os.listdir(image_folder) if img.endswith((".png", ".jpg", ".jpeg"))]
-    images.sort()  # Sort the images by name (assuming they are named sequentially)
+    # Create the output folder if it does not exist
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
 
-    # Read the first image to get the dimensions
-    frame = cv2.imread(os.path.join(image_folder, images[0]))
-    height, width, layers = frame.shape
+    frame_count = 0
+    while True:
+        # Read the next frame
+        ret, frame = video_capture.read()
+        
+        # If there are no more frames, break the loop
+        if not ret:
+            break
+        
+        # Save the frame as an image file
+        frame_filename = os.path.join(output_folder, f"frame_{frame_count:04d}.png")
+        cv2.imwrite(frame_filename, frame)
+        
+        # Print progress
+        print(f"Extracted frame {frame_count}")
+        
+        frame_count += 1
 
-    # Define the codec and create VideoWriter object
-    fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # You can use 'XVID' or 'MJPG' as well
-    video = cv2.VideoWriter(output_video, fourcc, fps, (width, height))
+    # Release the video capture object
+    video_capture.release()
+    print("All frames extracted.")
 
-    for image in images:
-        img_path = os.path.join(image_folder, image)
-        frame = cv2.imread(img_path)
-        video.write(frame)
-
-    # Release the video writer object
-    video.release()
-
-if __name__ == "__main__":
-    image_folder = 'C:/Users/ophys/OneDrive/Documents/UN/8 semester/Codification theory/Project/frame_imgs'
-    output_video = 'output_video.mp4'
-    fps = 24  # Frames per second
-
-    create_video_from_images(image_folder, output_video, fps)
-
+# Example usage
+video_path = 'C:/Users/ophys/OneDrive/Documents/UN/8 semester/Codification theory/Project/videos/output_video.avi'
+output_folder = 'C:/Users/ophys/OneDrive/Documents/UN/8 semester/Codification theory/Project/video_frames'
+extract_frames(video_path, output_folder)
 
 """
 from PIL import Image
