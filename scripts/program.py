@@ -153,8 +153,6 @@ class Program:
         # Create the encoder & get the source code 
         encoder = Encoder(self.coding_method, source, self.args)
         
-        print(encoder.source_code)
-        
         source_code = encoder.source_code
         inverse_source_code = source_code.inverse()
 
@@ -190,11 +188,12 @@ class Program:
         print("Content = Decoded content?:", content[:-1] == decoder_content)
         print("File path:", self.file_manager.file_path)
         print("Coding method:", self.coding_method)
+        print("Unique characters:", len(self.file_manager.symbols))
+        print("Number of characters:", self.file_manager.length)
 
         # Save basic metrics
-        self.metrics["unique-characters"] = len(self.file_manager.symbols)
-        self.metrics["characters"] = self.file_manager.length
         self.metrics["entropy"] = entropy
+        self.metrics["average-length"] = average_length
         self.metrics["efficiency"] = entropy/average_length
         self.metrics["pixels"] = video.total_pixels
         self.metrics["dimensions"] = (video.width, video.height)
