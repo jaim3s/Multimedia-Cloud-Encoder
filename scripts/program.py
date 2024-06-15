@@ -7,9 +7,8 @@ from scripts.video_generator import VideoGenerator
 from scripts.misc import *
 from math import ceil
 from typing import Tuple
-import scripts.constants
+import scripts.constants, os
 import numpy as np
-import os
 
 class Program:
     """
@@ -115,6 +114,26 @@ class Program:
             except Exception as e:
                 print(f"Failed to delete {file_path}: {e}")
 
+    def create_folder(self) -> None:
+
+        # Define the paths
+        self.parent_path = scripts.constants.content_folder_path + "\\" + self.coding_method
+
+        # Images path
+        self.imgs_path = self.parent_path + "\\imgs"
+        self.original_frames_path = self.imgs_path + "\\original_frames"
+        self.video_frames_path = self.imgs_path + "\\video_frames"
+
+        # Video path
+        self.video_path = self.parent_path + "\\video"
+
+        # Create folders
+        os.makedirs(self.parent_path, exist_ok=True)
+        os.makedirs(self.imgs_path, exist_ok=True)
+        os.makedirs(self.video_path, exist_ok=True)
+        os.makedirs(self.original_frames_path, exist_ok=True)
+        os.makedirs(self.video_frames_path, exist_ok=True)
+
     def show_metrics(self) -> None:
         """
         Show the metrics.
@@ -140,8 +159,8 @@ class Program:
                 return None
         """
 
-        # Delete all the files of the folder frame_imgs_folder_path
-        self.delete_files_in_folder(scripts.constants.original_frames_folder_path)
+        # Create directory
+        self.create_folder()
 
         # Get the probability distribution and create the source
         pd = self.file_manager.get_pd()
@@ -167,16 +186,20 @@ class Program:
 
         # Add the inverse source code to the coded content of the text file and the delimiters
         coded_content = inverse_source_code_str + character_to_binary(scripts.constants.SOURCE_CODE_DELIMITER, scripts.constants.BLOCK_CODE_LENGTH) + encoder.encode(content) 
+        coded_content = encoder.add_redundancy(coded_content, scripts.constants.PIXEL_WIDTH)
 
         # Video generator in the platform of youtube
         video = VideoGenerator(
             coded_content, 
             scripts.constants.BIT_DEPTH,
-            "youtube".lower()
+            "youtube".lower(),
+            self.original_frames_path,
+            self.video_frames_path,
+            self.video_path
         )
 
         # Decoder
-        decoder = Decoder(scripts.constants.original_frames_folder_path)
+        decoder = Decoder(self.original_frames_path)
 
         coded_content_decoder = decoder.get_coded_content()
 

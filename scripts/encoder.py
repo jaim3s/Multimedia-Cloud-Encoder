@@ -24,6 +24,8 @@ class Encoder:
 
         select_coding_method(self) -> object:
             Select the coding method.
+        add_redundancy(self, coded_content: str, pixel_width: int) -> str:
+            Add redundancy to the coded content.
         encode(self, content: str) -> str:
             Encode the content.
     """
@@ -51,6 +53,23 @@ class Encoder:
                 return scripts.constants.CODING_METHODS[self.coding_method](self.source, *self.args)
             else:
                 raise Exception(f"Coding method ({self.coding_method}) doesn't exist.")
+
+    def add_redundancy(self, coded_content: str, pixel_width: int) -> str:
+        """
+        Add redundancy to the coded content.
+
+            Parameters
+                coded_content (str): The coded content from the image of the text file
+                pixel_width (int): Width of the pixels
+
+            Returns
+                return The new coded content with redundancy
+        """
+
+        new_coded_content = ""
+        for ch in coded_content:
+            new_coded_content += ch*pixel_width
+        return new_coded_content
 
     def encode(self, content: str) -> str:
         """

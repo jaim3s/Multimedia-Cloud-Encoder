@@ -22,6 +22,8 @@ class Decoder:
             Get the coded content from the video.
         decode_inverse_source_code(self, coded_content: str) -> tuple:
             Decode the inverse source code.
+        remove_redundancy(self, coded_content: str, pixel_width: int) -> str:
+            Remove redundancy from the coded content.
         decode(self, coded_content: str) -> str:
             Decode the coded content.
     """
@@ -87,6 +89,34 @@ class Decoder:
             value = coded_content[i:i+scripts.constants.BLOCK_CODE_LENGTH]
         return inverse_source_code, i+scripts.constants.BLOCK_CODE_LENGTH
 
+    def remove_redundancy(self, coded_content: str, pixel_width: int) -> str:
+        """
+        Remove redundancy from the coded content.
+
+            Parameters
+                coded_content (str): The coded content from the image of the text file
+                pixel_width (int): Width of the pixels
+
+            Returns
+                return The new coded content without redundancy
+        """
+
+        new_coded_content = ""
+        for i in range(0, len(coded_content), pixel_width):
+            cnt0, cnt1 = 0, 0
+            for j in coded_content[i:i+pixel_width]:
+                if j == "0":
+                    cnt0 += 1
+                elif j == "1":
+                    cnt1 += 1
+            if cnt0 > cnt1:
+                new_coded_content += "0"
+            elif cnt1 > cnt0:
+                new_coded_content += "1"
+            else:
+                new_coded_content += "0"
+        return new_coded_content
+
     def decode(self, coded_content: str) -> str:
         """
         Decode the coded content.
@@ -98,6 +128,7 @@ class Decoder:
                 return The original content
         """
 
+        coded_content = self.remove_redundancy(coded_content, scripts.constants.PIXEL_WIDTH)
         inverse_source_code, i = self.decode_inverse_source_code(coded_content)
         content, sub, end_delimiter = "", "", list(inverse_source_code.keys())[-1]
         for ch in range(i, len(coded_content)):

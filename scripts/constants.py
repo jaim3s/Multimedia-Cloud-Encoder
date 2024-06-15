@@ -9,6 +9,7 @@ current_directory = os.getcwd()
 # Paths
 
 imgs_folder_path = current_directory + "\\imgs"
+content_folder_path = current_directory + "\\content"
 original_frames_folder_path = current_directory + "\\imgs\\original_frames"
 video_frames_imgs_folder_path = current_directory + "\\imgs\\video_frames"
 videos_folder_path = current_directory + "\\videos"
@@ -55,6 +56,8 @@ RESOLUTIONS = {
 # Bit depth
 
 BIT_DEPTH = 24
+PIXEL_WIDTH, PIXEL_HEIGHT = 4, 1
+
 
 # Modes for the creation of images (with PIL)
 

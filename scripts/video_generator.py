@@ -16,6 +16,8 @@ class VideoGenerator:
             Text file coded content
         bit_depth : int
             Bit depth (bpp) of the image
+        platform : str
+            Platform to upload the video
         total_pixels : float
             Total number of pixels to use in the image
         dimensions : tuple 
@@ -28,6 +30,12 @@ class VideoGenerator:
             Matrix with pixels
         images : List
             List with PIL Image objects
+        original_frames_path : str
+            Path of the original frames folder
+        video_frames_path : str
+            Path of the video frames folder
+        video_path : str
+            Path of the video folder
 
         Methods
         -------
@@ -44,7 +52,7 @@ class VideoGenerator:
             Save the video in the given path.
     """
 
-    def __init__(self, coded_content: str, bit_depth: int, platform: str) -> None:
+    def __init__(self, coded_content: str, bit_depth: int, platform: str, original_frames_path: str, video_frames_path: str, video_path: str) -> None:
         self.coded_content = coded_content
         self.bit_depth = bit_depth
         self.platform = platform
@@ -52,9 +60,9 @@ class VideoGenerator:
         self.dimensions, self.frames = self.fit_resolution()
         self.width, self.height = self.dimensions
         self.images = self.generate_images()
-        self.save(original_frames_folder_path)
-        self.create_video(videos_folder_path+"/output_video.mp4", 1)
-        self.extract_frames(videos_folder_path+"/output_video.mp4", video_frames_imgs_folder_path)
+        self.save(original_frames_path)
+        self.create_video(video_path+"/output_video.mp4", 1)
+        self.extract_frames(video_path+"/output_video.mp4", video_frames_path)
 
     def fit_resolution(self) -> tuple:
         """
@@ -105,9 +113,9 @@ class VideoGenerator:
                 return List with the images
         """
 
-        coded_content_width, images = self.width*self.height*self.bit_depth, []
-        for i in range(0, len(self.coded_content), coded_content_width):
-            images.append(ImageGenerator(self.coded_content[i: i+coded_content_width], self.bit_depth, self.dimensions).image)
+        coded_content_area, images = self.width*self.height*self.bit_depth, []
+        for i in range(0, len(self.coded_content), coded_content_area):
+            images.append(ImageGenerator(self.coded_content[i: i+coded_content_area], self.bit_depth, self.dimensions).image)
         return images
 
     def extract_frames(self, video_path: str, output_folder: str) -> None:
