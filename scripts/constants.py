@@ -63,3 +63,6 @@ MODES = {
     24 : "RGB", # Red-Green-Blue
     32 : "RGBA", # Red-Green-Blue-Transparency
 }
+
+# Maximun distance of two values in RGB format: 255**2 + 255**2 + 255**2
+MAX_DIST = 195075

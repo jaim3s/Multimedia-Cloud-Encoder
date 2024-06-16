@@ -13,8 +13,8 @@ def main():
     Run code.
     """
 
-    program0 = Program(
-        file_path="files/test.txt", 
+    program0 = Program( 
+        file_path="files/txt/test.txt", 
         coding_method="huffman",
         args=[["0", "1"]]
     )
@@ -22,7 +22,7 @@ def main():
     program0.run()
 
     program1 = Program(
-        file_path="files/test.txt", 
+        file_path="files/txt/test.txt", 
         coding_method="block",
         args=[["0", "1"]]
     )

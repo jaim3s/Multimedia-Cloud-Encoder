@@ -141,7 +141,7 @@ class VideoGenerator:
             ret, frame = video_capture.read()
             if not ret:
                 break
-            frame_filename = os.path.join(output_folder, f"frame_{frame_count:04d}.png")
+            frame_filename = os.path.join(output_folder, f"frame{frame_count}.png")
             cv2.imwrite(frame_filename, frame)
             frame_count += 1
         video_capture.release()

@@ -4,6 +4,7 @@ from scripts.encoders.huffman import Huffman
 from scripts.encoder import Encoder
 from scripts.decoder import Decoder
 from scripts.video_generator import VideoGenerator
+from scripts.image_comparator import ImageComparator
 from scripts.misc import *
 from math import ceil
 from typing import Tuple
@@ -127,12 +128,16 @@ class Program:
         # Video path
         self.video_path = self.parent_path + "\\video"
 
+        # Comparison path
+        self.comparison_path = self.imgs_path + "\\comparison"
+
         # Create folders
         os.makedirs(self.parent_path, exist_ok=True)
         os.makedirs(self.imgs_path, exist_ok=True)
         os.makedirs(self.video_path, exist_ok=True)
         os.makedirs(self.original_frames_path, exist_ok=True)
         os.makedirs(self.video_frames_path, exist_ok=True)
+        os.makedirs(self.comparison_path, exist_ok=True)
 
     def show_metrics(self) -> None:
         """
@@ -206,6 +211,14 @@ class Program:
         decoder_content = decoder.decode(coded_content_decoder)
 
         self.log(decoder_content)
+
+        # Image comparison
+        image_comparator = ImageComparator(
+            self.original_frames_path,
+            self.video_frames_path,
+            self.comparison_path
+        )
+        image_comparator.compare()
 
         print("Basic information")
         print("Content = Decoded content?:", content[:-1] == decoder_content)

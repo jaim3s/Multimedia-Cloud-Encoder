@@ -67,3 +67,4 @@ def int_to_bin_left_padding(num: int, n: int) -> str:
     """
 
     return str(bin(num)[2:]).zfill(n)
+
