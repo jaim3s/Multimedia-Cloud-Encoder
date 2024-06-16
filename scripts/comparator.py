@@ -1,25 +1,42 @@
+from typing import List
 import pandas as pd
 
 class Comparator:
+    """
+    A class to compare two programs.
 
-    def compare(self, program0: "Program", program1: "Program") -> None:
+        Attributes
+        ----------
+
+        program0 : "Program"
+            Program 0 
+        program1 : "Program"
+            Program 1 
+
+        Methods
+        -------
+
+        compare(self) -> None:
+            Compare the programs metrics.
+    """
+
+    def __init__(self, programs: List["Program"]) -> None:
+        self.programs = programs
+
+    def compare(self) -> None:
         """
-        Compare two programs metrics.
+        Compare the programs metrics.
 
             Parameters
-                program0 ("Program"): First program 
-                program1 ("Program"): Second program
+                None
     
             Returns
                 return None
         """
 
         data = {}
-
-        for key in program0.metrics:
-            data[key] = [program0.metrics[key], program1.metrics[key]]
+        for key in self.programs[0].metrics:
+            data[key] = [program.metrics[key] for program in self.programs]
         df = pd.DataFrame(data)
-
-        # Display dataframe information
         print(df)
-
+                

@@ -8,11 +8,7 @@ current_directory = os.getcwd()
 
 # Paths
 
-imgs_folder_path = current_directory + "\\imgs"
 content_folder_path = current_directory + "\\content"
-original_frames_folder_path = current_directory + "\\imgs\\original_frames"
-video_frames_imgs_folder_path = current_directory + "\\imgs\\video_frames"
-videos_folder_path = current_directory + "\\videos"
 logs_text_file_path = current_directory + "\\logs\\log.txt"
 
 # Formats

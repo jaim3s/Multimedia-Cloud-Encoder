@@ -29,8 +29,8 @@ def main():
 
     program1.run()
     
-    comparator = Comparator()
-    comparator.compare(program0, program1)
+    comparator = Comparator([program0, program1])
+    comparator.compare()
 
 if __name__ == "__main__":
     main()
