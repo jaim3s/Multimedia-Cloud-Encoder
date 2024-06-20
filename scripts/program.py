@@ -7,7 +7,7 @@ from scripts.video_generator import VideoGenerator
 from scripts.image_comparator import ImageComparator
 from scripts.misc import *
 from math import ceil
-from typing import Tuple
+from typing import List, Tuple
 import scripts.constants, os
 import numpy as np
 
@@ -36,12 +36,18 @@ class Program:
 
         validate_kwargs(self, kwargs: dict, valid_kwargs: dict) -> None:
             Validate the key word arguments.
+        create_paths(self) -> None:
+            Create the paths of the Program object.
+        create_folders(self) -> None:
+            Create the folders of the Program object.
         log(self, content: str) -> None:
             Create a file to write the given content.
         delete_files_in_folder(self, folder_path: str) -> None:
             Delete all the files of a given folder path.
-        show_metrics(self) -> None:
-            Show the metrics.
+        get_metrics(self) -> None:
+            Get the metrics.
+        generate_results(self) -> str:
+            Generate the final results.
         run(self) -> None:
             Run the program.
     """
@@ -49,6 +55,7 @@ class Program:
     valid_kwargs = {
         "file_path"       : str,
         "coding_method"   : str,
+        "platform"        : str,
         "args"            : list,
     }
 
@@ -80,18 +87,66 @@ class Program:
             else:
                 raise Exception(f"The key ({key}) ins't a valid keyword argument.")
 
-    def log(self, content: str) -> None:
+    def create_paths(self) -> None:
+        """
+        Create the paths of the Program object.
+
+            Parameters
+                None
+    
+            Returns
+                return None
+        """
+
+        # Define the parent path
+        self.parent_path = scripts.constants.content_folder_path + "\\" + self.coding_method
+
+        # Images path (general, original frames and video frames)
+        self.imgs_path = self.parent_path + "\\imgs"
+        self.original_frames_path = self.imgs_path + "\\original_frames"
+        self.video_frames_path = self.imgs_path + "\\video_frames"
+
+        # Video path
+        self.video_path = self.parent_path + "\\video"
+
+        # Comparison path
+        self.comparison_path = self.imgs_path + "\\comparison"
+
+        # Log path
+        self.log_path = self.parent_path + "\\logs"
+
+    def create_folders(self) -> None:
+        """
+        Create the folders of the Program object.
+
+            Parameters
+                None
+    
+            Returns
+                return None
+        """
+
+        os.makedirs(self.parent_path, exist_ok=True)
+        os.makedirs(self.imgs_path, exist_ok=True)
+        os.makedirs(self.video_path, exist_ok=True)
+        os.makedirs(self.original_frames_path, exist_ok=True)
+        os.makedirs(self.video_frames_path, exist_ok=True)
+        os.makedirs(self.comparison_path, exist_ok=True)
+        os.makedirs(self.log_path, exist_ok=True)
+
+    def log(self, filename: str, content: str) -> None:
         """
         Create a file to write the given content.
 
             Parameters
+                filename (str): Name of the logs file
                 content (str): Content to write in the log file
     
             Returns
                 return None
         """
 
-        with open(scripts.constants.logs_text_file_path, "w") as file:
+        with open(self.log_path + f"\\{filename}", "w") as file:
             file.write(content)
 
     def delete_files_in_folder(self, folder_path: str) -> None:
@@ -115,43 +170,42 @@ class Program:
             except Exception as e:
                 print(f"Failed to delete {file_path}: {e}")
 
-    def create_folder(self) -> None:
-
-        # Define the paths
-        self.parent_path = scripts.constants.content_folder_path + "\\" + self.coding_method
-
-        # Images path
-        self.imgs_path = self.parent_path + "\\imgs"
-        self.original_frames_path = self.imgs_path + "\\original_frames"
-        self.video_frames_path = self.imgs_path + "\\video_frames"
-
-        # Video path
-        self.video_path = self.parent_path + "\\video"
-
-        # Comparison path
-        self.comparison_path = self.imgs_path + "\\comparison"
-
-        # Create folders
-        os.makedirs(self.parent_path, exist_ok=True)
-        os.makedirs(self.imgs_path, exist_ok=True)
-        os.makedirs(self.video_path, exist_ok=True)
-        os.makedirs(self.original_frames_path, exist_ok=True)
-        os.makedirs(self.video_frames_path, exist_ok=True)
-        os.makedirs(self.comparison_path, exist_ok=True)
-
-    def show_metrics(self) -> None:
+    def get_metrics(self) -> str:
         """
-        Show the metrics.
+        Get the metrics.
 
             Parameters
                 None
     
             Returns
-                return None
+                return The metrics of the program in string format
         """
 
+        res = ""
         for key in self.metrics:
-            print(key, ":", self.metrics[key])
+            res += key + ":" + str(self.metrics[key]) + "\n"
+        return res
+
+    def generate_results(self, decoder_content: str, comparisons: List[np.ndarray]) -> str:
+        """
+        Generate the final results.
+
+            Parameters
+                decoder_content (str): Final result of the code
+    
+            Returns
+                return The results of the Program execution.
+        """
+
+        result = f"Basic information - {self.coding_method}\n"
+        result += "Result: True\n" if self.file_manager.content[:-1] == decoder_content else "Result: False\n"
+        result += "File path: " + self.file_manager.file_path + "\n"
+        result += "Coding method: " + self.coding_method + "\n"
+        result += "Unique characters: " + str(len(self.file_manager.symbols)) + "\n"
+        result += "Number of characters: " + str(self.file_manager.length) + "\n" 
+        result += "Comparison: " + " ".join([str(comparison) for comparison in comparisons]) + "\n"
+        result += "Metrics\n"
+        return result
 
     def run(self) -> None:
         """
@@ -164,8 +218,9 @@ class Program:
                 return None
         """
 
-        # Create directory
-        self.create_folder()
+        # Create paths and folders
+        self.create_paths()
+        self.create_folders()
 
         # Get the probability distribution and create the source
         pd = self.file_manager.get_pd()
@@ -197,7 +252,7 @@ class Program:
         video = VideoGenerator(
             coded_content, 
             scripts.constants.BIT_DEPTH,
-            "youtube".lower(),
+            self.platform.lower(),
             self.original_frames_path,
             self.video_frames_path,
             self.video_path
@@ -210,8 +265,6 @@ class Program:
 
         decoder_content = decoder.decode(coded_content_decoder)
 
-        self.log(decoder_content)
-
         # Image comparison
         image_comparator = ImageComparator(
             self.original_frames_path,
@@ -219,13 +272,7 @@ class Program:
             self.comparison_path
         )
         image_comparator.compare()
-
-        print("Basic information")
-        print("Content = Decoded content?:", content[:-1] == decoder_content)
-        print("File path:", self.file_manager.file_path)
-        print("Coding method:", self.coding_method)
-        print("Unique characters:", len(self.file_manager.symbols))
-        print("Number of characters:", self.file_manager.length)
+        comparisons = image_comparator.average(image_comparator.comparisons)
 
         # Save basic metrics
         self.metrics["entropy"] = entropy
@@ -233,7 +280,6 @@ class Program:
         self.metrics["efficiency"] = entropy/average_length
         self.metrics["pixels"] = video.total_pixels
         self.metrics["dimensions"] = (video.width, video.height)
-
-        print("Metrics")
-
-        self.show_metrics()
+        
+        result = self.generate_results(decoder_content, comparisons) + "\n" + self.get_metrics()
+        self.log(f"log_{self.coding_method}.txt", result)

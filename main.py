@@ -16,6 +16,7 @@ def main():
     program0 = Program( 
         file_path="files/txt/test.txt", 
         coding_method="huffman",
+        platform="youtube",
         args=[["0", "1"]]
     )
 
@@ -24,6 +25,7 @@ def main():
     program1 = Program(
         file_path="files/txt/test.txt", 
         coding_method="block",
+        platform="youtube",
         args=[["0", "1"]]
     )
 

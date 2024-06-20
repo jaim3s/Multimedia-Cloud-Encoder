@@ -69,7 +69,7 @@ class ImageComparator:
             plt.savefig(self.comparison_path + f"\\cmp_frame{i}.png", dpi=300)
 
     def average(self, comparisons: List[np.ndarray]) -> float:
-        pass
+        return [np.mean(comparison) for comparison in comparisons]
 
     def compare(self) -> List[np.ndarray]:
         """

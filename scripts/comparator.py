@@ -23,7 +23,7 @@ class Comparator:
     def __init__(self, programs: List["Program"]) -> None:
         self.programs = programs
 
-    def compare(self) -> None:
+    def compare(self) -> pd.DataFrame:
         """
         Compare the programs metrics.
 
@@ -31,12 +31,11 @@ class Comparator:
                 None
     
             Returns
-                return None
+                return Dataframe with the metrics of each Program
         """
 
         data = {}
         for key in self.programs[0].metrics:
             data[key] = [program.metrics[key] for program in self.programs]
-        df = pd.DataFrame(data)
-        print(df)
+        return pd.DataFrame(data)
                 

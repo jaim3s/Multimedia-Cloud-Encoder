@@ -1,0 +1,14 @@
+Basic information - huffman
+Result: True
+File path: files/txt/test.txt
+Coding method: huffman
+Unique characters: 66
+Number of characters: 20725
+Comparison: 0.8813037712191358
+Metrics
+
+entropy:4.264140771362646
+average-length:8.388805790108568
+efficiency:0.5083132066772355
+pixels:29247.333333333332
+dimensions:(256, 144)

@@ -1,0 +1,14 @@
+Basic information - block
+Result: True
+File path: files/txt/test.txt
+Coding method: block
+Unique characters: 66
+Number of characters: 20725
+Comparison: 0.8880784025041117
+Metrics
+
+entropy:4.264140771362646
+average-length:6.999999999999999
+efficiency:0.609162967337521
+pixels:24433.5
+dimensions:(256, 144)
