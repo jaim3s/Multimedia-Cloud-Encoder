@@ -1,7 +1,9 @@
+from scripts.entity import Entity
 from typing import List
 from math import log
 
-class Source:
+
+class Source(Entity):
     """
     A class to represent the source of a text file.
 
@@ -10,7 +12,7 @@ class Source:
 
         symbols : List["str"]
             List with symbols
-        pd : List[float]
+        probability_distribution : List[float]
             List wit the probability distribution
         source : dict
             Dictionary with the symbols (keys) and the probability distribution (values)
@@ -28,9 +30,14 @@ class Source:
             Get the entropy of the source.
     """
 
-    def __init__(self, symbols: List["str"], pd: List[float]) -> None:
-        self.symbols = symbols
-        self.pd = pd
+    valid_kwargs = {
+        "symbols"                  : list,
+        "probability_distribution" : list,
+    }
+
+    def __init__(self, **kwargs: dict) -> None:
+        # Validate the kwargs arguments
+        self.validate_kwargs(kwargs, self.valid_kwargs) 
         self.source = self.join()
 
     def __str__(self) -> str:
@@ -70,7 +77,7 @@ class Source:
                 return List with the each symbol and it's probability
         """
 
-        return list(zip(self.symbols, self.pd))
+        return list(zip(self.symbols, self.probability_distribution))
 
     def entropy(self, d: int) -> float:
         """
@@ -83,6 +90,6 @@ class Source:
                 return A float representing the entropy
         """
 
-        return -sum([self.pd[i]*log(self.pd[i], d) for i in range(len(self.symbols))])
+        return -sum([self.probability_distribution[i]*log(self.probability_distribution[i], d) for i in range(len(self.symbols))])
 
 

@@ -11,10 +11,96 @@ current_directory = os.getcwd()
 content_folder_path = current_directory + "\\content"
 logs_text_file_path = current_directory + "\\logs\\log.txt"
 
-# Formats
+# File formats
 
-IMG_FORMATS = ["png", "jpg"]
-TXT_FORMATS = ["txt"]
+VIDEO_FORMATS = [
+    "mp4",   # MPEG-4 Video
+    "avi",   # Audio Video Interleave
+    "mkv",   # Matroska Video
+    "mov",   # Apple QuickTime Movie
+    "wmv",   # Windows Media Video
+    "flv",   # Flash Video
+    "webm",  # WebM Video
+    "mpeg",  # MPEG Video
+    "mpg",   # MPEG Video
+    "m4v",   # MPEG-4 Video
+    "3gp",   # 3GPP Multimedia File
+    "3g2",   # 3GPP2 Multimedia File
+    "vob",   # DVD Video Object
+    "ogv",   # Ogg Video
+    "rm",    # RealMedia
+    "rmvb",  # RealMedia Variable Bitrate
+    "asf",   # Advanced Systems Format
+    "f4v",   # Flash MP4 Video
+    "m2ts",  # Blu-ray Disc Audio-Video
+    "mts"    # AVCHD Video
+]
+
+AUDIO_FORMATS = [
+    "mp3",  # MPEG Layer 3 Audio
+    "wav",  # Waveform Audio File Format
+    "aac",  # Advanced Audio Coding
+    "flac", # Free Lossless Audio Codec
+    "alac", # Apple Lossless Audio Codec
+    "ogg",  # Ogg Vorbis
+    "wma",  # Windows Media Audio
+    "aiff", # Audio Interchange File Format
+    "m4a",  # MPEG-4 Audio
+    "pcm",  # Pulse-Code Modulation
+    "aif",  # Audio Interchange File Format
+    "dsd",  # Direct Stream Digital
+    "amr",  # Adaptive Multi-Rate Audio Codec
+    "opus", # Opus Audio Codec
+    "ra",   # Real Audio
+    "au",   # Audio file format developed by Sun Microsystems
+    "tta",  # True Audio
+    "voc",  # Creative Labs Audio File
+    "mid"   # MIDI (Musical Instrument Digital Interface)
+]
+
+IMG_FORMATS = [
+    "jpg",  # JPEG image
+    "jpeg", # JPEG image
+    "png",  # Portable Network Graphics
+    "gif",  # Graphics Interchange Format
+    "bmp",  # Bitmap image
+    "tiff", # Tagged Image File Format
+    "tif",  # Tagged Image File Format
+    "webp", # WebP image
+    "svg",  # Scalable Vector Graphics
+    "heic", # High Efficiency Image Coding
+    "heif", # High Efficiency Image Format
+    "raw",  # Raw image format
+    "ico",  # Icon file format
+    "psd",  # Adobe Photoshop Document
+    "ai",   # Adobe Illustrator Artwork
+    "eps",  # Encapsulated PostScript
+    "pdf",  # Portable Document Format (can contain images)
+    "indd", # Adobe InDesign Document
+    "jfif"  # JPEG File Interchange Format
+]
+
+TXT_FORMATS = [
+    "txt",  # Plain text file
+    "md",   # Markdown file
+    "html", # Hypertext Markup Language file
+    "htm",  # Hypertext Markup Language file
+    "css",  # Cascading Style Sheets file
+    "js",   # JavaScript file
+    "json", # JavaScript Object Notation file
+    "xml",  # Extensible Markup Language file
+    "csv",  # Comma-Separated Values file
+    "tsv",  # Tab-Separated Values file
+    "yaml", # YAML Ain't Markup Language file
+    "yml",  # YAML Ain't Markup Language file
+    "ini",  # Initialization file
+    "log",  # Log file
+    "rtf",  # Rich Text Format file
+    "docx", # Microsoft Word document (text-based content)
+    "odt",  # OpenDocument Text document
+    "tex",  # LaTeX file
+    "pdf"   # Portable Document Format (can contain text)
+]
 
 # ASCII printable characters 
 

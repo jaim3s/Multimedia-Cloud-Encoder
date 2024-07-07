@@ -5,13 +5,14 @@ from scripts.encoder import Encoder
 from scripts.decoder import Decoder
 from scripts.video_generator import VideoGenerator
 from scripts.image_comparator import ImageComparator
+from scripts.entity import Entity
 from scripts.misc import *
 from math import ceil
 from typing import List, Tuple
-import scripts.constants, os
-import numpy as np
+import scripts.constants, os, numpy as np
 
-class Program:
+
+class Program(Entity):
     """
     A class to execute the program.
 
@@ -34,8 +35,6 @@ class Program:
         Methods
         -------
 
-        validate_kwargs(self, kwargs: dict, valid_kwargs: dict) -> None:
-            Validate the key word arguments.
         create_paths(self) -> None:
             Create the paths of the Program object.
         create_folders(self) -> None:
@@ -48,44 +47,25 @@ class Program:
             Get the metrics.
         generate_results(self) -> str:
             Generate the final results.
+        initialization(self) -> None:
+            Initializate the program.
         run(self) -> None:
             Run the program.
     """
 
     valid_kwargs = {
-        "file_path"       : str,
-        "coding_method"   : str,
-        "platform"        : str,
-        "args"            : list,
+        "file_path"     : str,
+        "coding_method" : str,
+        "platform"      : str,
+        "bit_width"     : int,
+        "bit_height"    : int,
+        "args"          : list,
     }
 
-    def __init__(self, **kwargs) -> None:
+    def __init__(self, **kwargs: dict) -> None:
         # Validate the kwargs arguments
         self.validate_kwargs(kwargs, self.valid_kwargs) 
-        self.file_manager = FileManager(self.file_path)
-        self.metrics = {}
-
-    def validate_kwargs(self, kwargs: dict, valid_kwargs: dict) -> None:
-        """
-        Validate the key word arguments.
-
-            Parameters
-                kwargs (dict): Dictinoary with the key word arguments
-                valid_kwargs (dict) : Dictionary with the allowed key word arguments
-    
-            Returns
-                return None
-        """
-
-        for key in kwargs:
-            # Validate key & value
-            if valid_kwargs.get(key, None):
-                if isinstance(kwargs[key], valid_kwargs[key]):
-                    setattr(self, key, kwargs[key])
-                else:
-                    raise Exception(f"The attributes values ({kwargs[key]}) are invalid.")
-            else:
-                raise Exception(f"The key ({key}) ins't a valid keyword argument.")
+        self.initialization()
 
     def create_paths(self) -> None:
         """
@@ -207,9 +187,9 @@ class Program:
         result += "Metrics\n"
         return result
 
-    def run(self) -> None:
+    def initialization(self) -> None:
         """
-        Run the program.
+        Initializate the program.
 
             Parameters
                 None
@@ -222,21 +202,46 @@ class Program:
         self.create_paths()
         self.create_folders()
 
+        self.file_manager = FileManager(self.file_path)
+        self.metrics = {}
+
+        # Assert lower case letters
+        self.coding_method = self.coding_method.lower();
+
+    def run(self) -> None:
+        """
+        Run the program.
+
+            Parameters
+                None
+    
+            Returns
+                return None
+        """
+
         # Get the probability distribution and create the source
-        pd = self.file_manager.get_pd()
-        source = Source(self.file_manager.symbols, pd)
+        source = Source(
+            symbols=self.file_manager.symbols, 
+            probability_distribution=self.file_manager.get_probability_distribution()
+        )
         
-        # Get the content
+        # Get the content of the file
         content = self.file_manager.content
 
         # Create the encoder & get the source code 
-        encoder = Encoder(self.coding_method, source, self.args)
-        
+        encoder = Encoder(
+            coding_method=self.coding_method,
+            source=source, 
+            args=self.args
+        )
+
         source_code = encoder.source_code
         inverse_source_code = source_code.inverse()
 
         # Get the inverse source code in string format
         inverse_source_code_str = inverse_source_code.inverse_source_code_to_string(scripts.constants.BLOCK_CODE_LENGTH)
+        
+        """
         
         # Average word length and entropy of the source and source code
         average_length = source_code.average_length(source)
@@ -246,16 +251,18 @@ class Program:
 
         # Add the inverse source code to the coded content of the text file and the delimiters
         coded_content = inverse_source_code_str + character_to_binary(scripts.constants.SOURCE_CODE_DELIMITER, scripts.constants.BLOCK_CODE_LENGTH) + encoder.encode(content) 
-        coded_content = encoder.add_redundancy(coded_content, scripts.constants.PIXEL_WIDTH)
+        coded_content = encoder.add_redundancy(coded_content, self.bit_width)
 
         # Video generator in the platform of youtube
         video = VideoGenerator(
-            coded_content, 
-            scripts.constants.BIT_DEPTH,
-            self.platform.lower(),
-            self.original_frames_path,
-            self.video_frames_path,
-            self.video_path
+            coded_content = coded_content,
+            bit_depth = scripts.constants.BIT_DEPTH,
+            platform = self.platform.lower(),
+            bit_width = self.bit_width,
+            bit_height = self.bit_height,
+            original_frames_path = self.original_frames_path,
+            video_frames_path = self.video_frames_path,
+            video_path = self.video_path,
         )
 
         # Decoder
@@ -283,3 +290,4 @@ class Program:
         
         result = self.generate_results(decoder_content, comparisons) + "\n" + self.get_metrics()
         self.log(f"log_{self.coding_method}.txt", result)
+        """

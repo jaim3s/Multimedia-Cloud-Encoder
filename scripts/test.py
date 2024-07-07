@@ -1,7 +1,3 @@
-import numpy as np
-a = np.ones(shape=(2,3))
-print(np.sum(a))
-
 """
 from PIL import Image
 import io
@@ -29,3 +25,6 @@ test.show()
 
 print(image_path[image_path.rfind(".")+1:])
 """
+import string
+
+print(string.printable)

@@ -172,4 +172,7 @@ class Huffman(CodingMethod):
         
         root = self.run()
         self.mark(root)
-        return SourceCode(self.source.symbols, self.get_leaves(root))
+        return SourceCode(
+            symbols1=self.source.symbols, 
+            symbols2=self.get_leaves(root)
+        )

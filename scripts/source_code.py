@@ -1,7 +1,9 @@
+from scripts.entity import Entity
 from scripts.misc import *
 from typing import List
 
-class SourceCode:
+
+class SourceCode(Entity):
     """
     A class to represent the source code of a source.
 
@@ -30,8 +32,14 @@ class SourceCode:
             Convert the source code object into a string object with then next format:
     """
 
-    def __init__(self, symbols1: List["str"],  symbols2: List["str"]) -> None:
-        self.symbols1, self.symbols2 = symbols1, symbols2
+    valid_kwargs = {
+        "symbols1" : list,
+        "symbols2" : list,
+    }
+
+    def __init__(self, **kwargs: dict) -> None:
+        # Validate the kwargs arguments
+        self.validate_kwargs(kwargs, self.valid_kwargs) 
         self.map = dict(zip(self.symbols1, self.symbols2))
 
     def __str__(self) -> str:
@@ -71,7 +79,10 @@ class SourceCode:
                 return The inverse SourceCode
         """
 
-        return SourceCode(self.symbols2, self.symbols1)
+        return SourceCode(
+            symbols1=self.symbols2, 
+            symbols2=self.symbols1
+        )
 
     def average_length(self, source: "Source") -> float:
         """
@@ -84,7 +95,7 @@ class SourceCode:
                 return A float representing the average length of the source code
         """
 
-        return sum([source.pd[i]*len(self.symbols2[i]) for i in range(len(source.symbols))])
+        return sum([source.probability_distribution[i]*len(self.symbols2[i]) for i in range(len(source.symbols))])
 
     def inverse_source_code_to_string(self, length: int) -> str:
         """

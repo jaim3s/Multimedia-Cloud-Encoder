@@ -17,11 +17,14 @@ def main():
         file_path="files/txt/test.txt", 
         coding_method="huffman",
         platform="youtube",
+        bit_width=1,
+        bit_height=1,
         args=[["0", "1"]]
     )
 
     program0.run()
 
+    """
     program1 = Program(
         file_path="files/txt/test.txt", 
         coding_method="block",
@@ -33,6 +36,7 @@ def main():
     
     comparator = Comparator([program0, program1])
     comparator.compare()
+    """
 
 if __name__ == "__main__":
     main()

@@ -1,11 +1,12 @@
 from scripts.image_generator import ImageGenerator
+from scripts.entity import Entity
 from scripts.constants import *
 from typing import List
 from math import ceil
-import numpy as np
-import cv2, os
+import cv2, os, numpy as np
 
-class VideoGenerator:
+
+class VideoGenerator(Entity):
     """
     A class to generate videos.
 
@@ -50,20 +51,28 @@ class VideoGenerator:
             Create the video in the given format.
         save(self, file_path: str) -> None:
             Save the video in the given path.
+        repeat_coded_content(self) -> str:
+            Repeat the bits row of the coded content with the bit height.
+        initialization(self) -> None:
+            Initializate the program.
     """
 
-    def __init__(self, coded_content: str, bit_depth: int, platform: str, original_frames_path: str, video_frames_path: str, video_path: str) -> None:
-        self.coded_content = coded_content
-        self.bit_depth = bit_depth
-        self.platform = platform
-        self.total_pixels = len(self.coded_content)/self.bit_depth
-        self.dimensions, self.frames = self.fit_resolution()
-        self.width, self.height = self.dimensions
-        self.images = self.generate_images()
-        self.save(original_frames_path)
-        self.create_video(video_path+"/output_video.mp4", 1)
-        self.extract_frames(video_path+"/output_video.mp4", video_frames_path)
+    valid_kwargs = {
+        "coded_content"        : str,
+        "bit_depth"            : int,
+        "platform"             : str,
+        "bit_width"            : int,
+        "bit_height"           : int,
+        "original_frames_path" : str,
+        "video_frames_path"    : str,
+        "video_path"           : str,
+    }
 
+    def __init__(self, **kwargs: dict) -> None:
+        # Validate the kwargs arguments
+        self.validate_kwargs(kwargs, self.valid_kwargs)
+        self.initialization()
+        
     def fit_resolution(self) -> tuple:
         """
         Find the best resolution for the total pixels.
@@ -78,28 +87,30 @@ class VideoGenerator:
         min_resolution, max_resolution = RESOLUTIONS[self.platform]
 
         # Get the dimensions of each resolution
-        min_w, min_h = min_resolution
-        max_w, max_h = max_resolution
+        min_width, min_height = min_resolution
+        max_width, max_height = max_resolution
 
         # Corner cases
-        if self.total_pixels <= min_w*min_h:
+        if self.total_pixels <= min_width*min_height:
             return min_resolution, 1
-        elif self.total_pixels >= max_w*max_h:
-            return max_resolution, ceil(self.total_pixels/(max_w*max_h))
+        elif self.total_pixels >= max_width*max_height:
+            return max_resolution, ceil(self.total_pixels/(max_width*max_height))
 
-        if max_w - min_w >= max_h - min_h:
+        if max_width - min_width >= max_height - min_height:
             dimensions = []
-            for w in range(min_w, max_w+1):
-                if min_h <= ceil(self.total_pixels/w) <= max_h:
-                    dimensions.append(((w, ceil(self.total_pixels/w)), self.total_pixels%w, ceil(self.total_pixels/w)))
-            best_resolution = min(dimensions, key=lambda dimension: dimension[1])
+            for width in range(min_width, max_width+1):
+                height = ceil(self.total_pixels/width)
+                if min_height <= height <= max_height:
+                    dimensions.append(((width, height), self.total_pixels%width, ceil(self.total_pixels/(width*height))))
+            best_resolution = max(dimensions, key=lambda dimension: dimension[0][0])
             return best_resolution[0], best_resolution[2]
         else:
             dimensions = []
-            for h in range(min_h, max_h+1):
-                if min_w <= ceil(self.total_pixels/h) <= max_w:
-                    dimensions.append(((ceil(self.total_pixels/h), h), self.total_pixels%h, ceil(self.total_pixels/h)))
-            best_resolution = min(dimensions, key=lambda dimension: dimension[1])
+            for height in range(min_height, max_height+1):
+                width = ceil(self.total_pixels/h)
+                if min_width <= width <= max_width:
+                    dimensions.append(((width, height), self.total_pixels%height, ceil(self.total_pixels/(width*height))))
+            best_resolution = max(dimensions, key=lambda dimension: dimension[0][0])
             return best_resolution[0], best_resolution[2]
 
     def generate_images(self) -> List:
@@ -179,3 +190,41 @@ class VideoGenerator:
 
         for i in range(len(self.images)):
             self.images[i].save(folder_path+f"\\frame{i}.png")
+
+    def repeat_coded_content(self) -> str:
+        """
+        Repeat the bits row of the coded content with the bit height.
+
+            Parameters
+                None
+
+            Returns
+                return Repeated coded content
+        """
+
+        row_bit_length = self.width*self.bit_depth
+        repeated_coded_content = ""
+        for i in range(0, len(self.coded_content), row_bit_length):
+            repeated_coded_content += self.coded_content[i:i+row_bit_length]*self.bit_height
+        return repeated_coded_content
+
+    def initialization(self) -> None:
+        """
+        Initializate the program.
+
+            Parameters
+                None
+    
+            Returns
+                return None
+        """
+
+        self.total_pixels = (len(self.coded_content)*self.bit_height)/self.bit_depth
+        self.dimensions, self.frames = self.fit_resolution()
+        self.width, self.height = self.dimensions
+        self.coded_content = self.repeat_coded_content()
+        print(len(self.coded_content)/self.bit_depth, self.total_pixels)
+        self.images = self.generate_images()
+        self.save(self.original_frames_path)
+        self.create_video(self.video_path+"/output_video.mp4", 1)
+        self.extract_frames(self.video_path+"/output_video.mp4", self.video_frames_path)
